@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sat Mar 19 02:01:36 2016 bougon_p
-** Last update Sat Mar 19 22:26:30 2016 bougon_p
+** Last update Sat Mar 19 22:37:04 2016 bougon_p
 */
 
 #include "mega.h"
@@ -96,7 +96,7 @@ void	refresh_player_realpos(t_player *player)
 {
   if (player->ismoving && player->stateright)
     player->real_pos.x += 1;
-  if (player->ismoving && !player->stateright)
+  if (player->ismoving && !player->stateright && player->real_pos.x > 0)
     player->real_pos.x -= 1;
 }
 
@@ -106,7 +106,8 @@ void	refresh_player_pos(t_player *player)
     {
       refresh_player_realpos(player);
       if (player->stateright == false
-	  && player->play_pos.x > LIMIT_LEFT)
+	  && player->play_pos.x > LIMIT_LEFT
+	  && player->real_pos.x > 0)
         {
 	  player->play_pos.x -= 4;
 	  player->onborderleft = false;
