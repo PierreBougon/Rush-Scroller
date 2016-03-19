@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:39:34 2016 bougon_p
-** Last update Sat Mar 19 22:56:18 2016 marc brout
+** Last update Sun Mar 20 00:04:04 2016 marc brout
 */
 
 #ifndef mega_h_
@@ -63,6 +63,7 @@ typedef struct		s_back
   t_bunny_position	pos_grass2[3];
   t_bunny_position	pos_gui;
   t_bunny_picture	*grass;
+  t_bunny_picture	*grass2;
   t_bunny_picture	*fence;
   t_bunny_picture	*rabbit;
   t_bunny_picture	*tree;
@@ -73,10 +74,18 @@ typedef struct		s_back
   t_bunny_picture	*gui;
 }			t_back;
 
+typedef struct		s_state
+{
+  bool			menu;
+  bool			game;
+  bool			end;
+}			t_state;
+
 typedef struct		s_menu
 {
   t_bunny_pixelarray	*menu;
   t_fire		*fire;
+  bool			start;
 }			t_menu;
 
 typedef	struct		s_data
@@ -89,6 +98,7 @@ typedef	struct		s_data
   int			kill;
   t_player		player;
   t_back		back;
+  t_state		state;
   t_menu		menu;
 }			t_data;
 
@@ -104,10 +114,18 @@ void	sampler_keys(t_data *data,
 		     t_bunny_keysym keysym);
 
 /*
+** DISPLAY
+*/
+void	disp_game(t_data *);
+void	disp_menu(t_data *);
+void	disp_end(t_data *);
+
+/*
 ** BACKGROUND
 */
 void	draw_bg(t_data *);
 void	draw_sky(t_data *);
+
 /*
 ** Players functions
 */
@@ -134,5 +152,6 @@ void	check_player_movement(t_data *,
 ** OTHERS
 */
 void	delete_all_clipables(t_data *);
+int	init_var(t_data *);
 
 #endif /* !mega_h_  */

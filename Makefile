@@ -5,7 +5,7 @@
 ## Login   <bougon_p@epitech.net>
 ## 
 ## Started on  Fri Mar 18 20:18:33 2016 bougon_p
-## Last update Sat Mar 19 23:41:04 2016 marc brout
+## Last update Sun Mar 20 00:04:27 2016 marc brout
 ##
 
 # USEFUL VARIABLES
@@ -36,6 +36,8 @@ MORT		=	src/mort/
 SRC		=	$(MAIN)main.c \
 			$(MAIN)background.c \
 			$(MAIN)delete.c \
+			$(MAIN)init_var.c \
+			$(MAIN)display.c \
 			$(MAIN)grass.c \
 			$(MAIN)check_pos.c \
 			$(MAIN)init_sprites.c \

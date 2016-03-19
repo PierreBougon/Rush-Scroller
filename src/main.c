@@ -5,16 +5,10 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:25:37 2016 bougon_p
-<<<<<<< HEAD
-** Last update Sat Mar 19 20:43:09 2016 benjamin duhieu
-=======
-** Last update Sat Mar 19 22:22:22 2016 bougon_p
->>>>>>> 3dde0c0e89fa69b1a73aafe243d5149a68bc5b17
+** Last update Sat Mar 19 23:26:42 2016 bougon_p
 */
 
 #include "mega.h"
-
-int	inc;
 
 t_bunny_response	button_key(t_bunny_event_state state,
                                 t_bunny_keysym keysym, void *_data)
@@ -24,9 +18,14 @@ t_bunny_response	button_key(t_bunny_event_state state,
   data = _data;
   if (keysym == BKS_ESCAPE && state == GO_DOWN)
     return (EXIT_ON_SUCCESS);
-  if (keysym == BKS_C && state == GO_DOWN)
-    data->kill = 1;
-  check_player_movement(data, keysym, state);
+  if (data->state.game)
+    check_player_movement(data, keysym, state);
+  if (data->state.menu && data->menu.start &&
+      keysym == BKS_RETURN && state == GO_DOWN)
+    {
+      data->state.menu = false;
+      data->state.game = true;
+    }
   if (state == GO_DOWN)
     sampler_keys(data, keysym);
   return (GO_ON);
@@ -47,11 +46,13 @@ t_bunny_response	mainloop(void *_data)
   t_data                *data;
 
   data = _data;
-  draw_bg(data);
   sampler(data->samples[data->curmusic], &data->change);
-  move_player(data);
-  bunny_blit(&data->window->buffer, data->back.fence, &data->back.pos_fence);
-  bunny_blit(&data->window->buffer, data->back.tree2, &data->back.pos_tree2);
+  if (data->state.menu)
+    disp_menu(data);
+  else if (data->state.game)
+    disp_game(data);
+  else if (data->state.end)
+    disp_end(data);
   bunny_display(data->window);
   return (GO_ON);
 }
@@ -61,12 +62,10 @@ int		main()
   t_data	data;
 
   srand(time(NULL));
-  inc = 50;
   bunny_set_maximum_ram(20000000);
-  if (init_sprites(&data) == 1 || init_player(&data) == 1 ||
-      init_sampler(&data))
-    return (1);
   data.window = bunny_start(WIN_WIDTH, WIN_HEIGHT, 0, "MEGAMAN");
+  if (init_var(&data) == 1)
+    return (1);
   bunny_set_loop_main_function(mainloop);
   bunny_set_key_response(button_key);
   bunny_set_click_response(click_actions);
