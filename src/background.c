@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sat Mar 19 03:27:05 2016 bougon_p
-** Last update Sat Mar 19 18:48:58 2016 benjamin duhieu
+** Last update Sat Mar 19 20:38:50 2016 benjamin duhieu
 */
 
 #include "mega.h"
@@ -57,7 +57,7 @@ void	draw_sky(t_data *data)
     }
   if (data->back.pos_sky.x <= -data->back.sky->clip_width)
     data->back.pos_sky.x = data->back.back->clip_width;
-  if (data->back.pos_sky2.x <= -data->back.sky2->clip_width)
+  if (data->back.pos_sky2.x <= -data->back.sky->clip_width)
     data->back.pos_sky2.x = data->back.back->clip_width;
   i++;
 }
@@ -97,11 +97,11 @@ void	draw_bg(t_data *data)
   bunny_blit(&data->window->buffer, data->back.back, NULL);
   bunny_blit(&data->window->buffer, data->back.sky,
   	     &data->back.pos_sky);
-  bunny_blit(&data->window->buffer, data->back.sky2,
+  bunny_blit(&data->window->buffer, data->back.sky,
   	     &data->back.pos_sky2);
   bunny_blit(&data->window->buffer, data->back.mount,
   	     &data->back.pos_mount);
-  bunny_blit(&data->window->buffer, data->back.mount2,
+  bunny_blit(&data->window->buffer, data->back.mount,
   	     &data->back.pos_mount2);
   rabbit(data);
   bunny_blit(&data->window->buffer, data->back.tree, &data->back.pos_tree);

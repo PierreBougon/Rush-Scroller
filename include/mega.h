@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:39:34 2016 bougon_p
-** Last update Sat Mar 19 22:26:27 2016 bougon_p
+** Last update Sat Mar 19 22:36:47 2016 benjamin duhieu
 */
 
 #ifndef mega_h_
@@ -60,19 +60,14 @@ typedef struct		s_back
   t_bunny_position	pos_fence;
   t_bunny_position	pos_grass[3];
   t_bunny_position	pos_grass2[3];
-  t_bunny_position	pos_ground;
-  t_bunny_position	pos_ground2;
   t_bunny_position	pos_gui;
-  t_bunny_picture	*grass[3];
-  t_bunny_picture	*grass2[3];
+  t_bunny_picture	*grass;
   t_bunny_picture	*fence;
   t_bunny_picture	*rabbit;
   t_bunny_picture	*tree;
   t_bunny_picture	*tree2;
   t_bunny_picture	*mount;
-  t_bunny_picture	*mount2;
   t_bunny_picture	*sky;
-  t_bunny_picture	*sky2;
   t_bunny_picture	*back;
   t_bunny_picture	*gui;
 }			t_back;
@@ -118,6 +113,7 @@ void	draw_left(t_data *);
 void	draw_right(t_data *);
 void	draw_sky(t_data *);
 void	grass_move(t_data *, int);
+void	init_tree(t_data *);
 void	move_player(t_data *);
 void	rotate_player_left(t_player *);
 void	rotate_player_right(t_player *);

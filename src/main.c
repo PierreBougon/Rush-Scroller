@@ -5,7 +5,11 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:25:37 2016 bougon_p
+<<<<<<< HEAD
+** Last update Sat Mar 19 20:43:09 2016 benjamin duhieu
+=======
 ** Last update Sat Mar 19 22:22:22 2016 bougon_p
+>>>>>>> 3dde0c0e89fa69b1a73aafe243d5149a68bc5b17
 */
 
 #include "mega.h"
