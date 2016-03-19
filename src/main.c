@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:25:37 2016 bougon_p
-** Last update Sat Mar 19 16:55:30 2016 bougon_p
+** Last update Sat Mar 19 17:45:42 2016 bougon_p
 */
 
 #include "mega.h"
@@ -54,7 +54,7 @@ int		main()
   set_max_heap_size(20000000);
   if (init_sprites(&data) == 1 || init_player(&data) == 1)
     return (1);
-  data.window = bunny_start(WIN_WIDTH, WIN_HEIGHT, 1, "MEGAMAN");
+  data.window = bunny_start(WIN_WIDTH, WIN_HEIGHT, 0, "MEGAMAN");
   bunny_set_loop_main_function(mainloop);
   bunny_set_key_response(button_key);
   bunny_set_click_response(click_actions);

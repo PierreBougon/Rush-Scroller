@@ -5,15 +5,28 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sat Mar 19 02:01:36 2016 bougon_p
-** Last update Sat Mar 19 16:15:43 2016 bougon_p
+** Last update Sat Mar 19 18:48:17 2016 bougon_p
 */
 
 #include "mega.h"
+
+void	check_murder(t_data *data)
+{
+  if ((data->player.stateright
+       && data->back.pos_rab.x <= data->player.play_pos.x + HITBOX
+       && data->back.pos_rab.x >data->player.play_pos.x)
+      || (!data->player.stateright
+	  && data->back.pos_rab.x >= data->player.play_pos.x - HITBOX
+	  && data->back.pos_rab.x < data->player.play_pos.x))
+    printf("\nYOU KILLED THE RABBIT\n");
+}
 
 void			anim_attck(t_data *data)
 {
   t_bunny_position	pos;
 
+  printf("\n##RABBIT POSITIONS##\nON SCREEN = x -> %d && y -> %d\n\n"
+	 , data->back.pos_rab.x, data->back.pos_rab.y);
   data->player.wait++;
   if (data->player.wait % 3 == 0)
     data->player.timatt++;
@@ -24,6 +37,7 @@ void			anim_attck(t_data *data)
   bunny_blit(&data->window->buffer,
 	     data->player.attck,
 	     &pos);
+  check_murder(data);
   if (data->player.timatt % 12 > 10)
     {
       data->player.isattack = false;
@@ -31,6 +45,25 @@ void			anim_attck(t_data *data)
     }
 }
 
+void	idle_anim(t_data *data)
+{
+  if (data->player.tim_idle % 3 == 0 && data->player.wait % 40 < 38)
+    {
+      data->player.stay->clip_x_position = 0;
+      data->player.stay->clip_width = 70;
+      bunny_blit(&data->window->buffer, data->player.stay,
+		 &data->player.play_pos);
+      data->player.wait++;
+      return ;
+    }
+  data->player.wait++;
+  if (data->player.wait % 6 == 0)
+    data->player.tim_idle++;
+  data->player.stay->clip_x_position = (data->player.tim_idle % 3) * 70;
+  data->player.stay->clip_width = 70;
+  bunny_blit(&data->window->buffer, data->player.stay,
+	     &data->player.play_pos);
+}
 
 void	move_player(t_data *data)
 {
@@ -39,7 +72,7 @@ void	move_player(t_data *data)
     {
       data->player.wait++;
       if (data->player.wait % 5 == 0)
-  	data->player.tim++;
+	data->player.tim++;
       data->player.sprite->clip_x_position = (data->player.tim % 10) * 70;
       data->player.sprite->clip_width = 70;
       bunny_blit(&data->window->buffer,
@@ -48,13 +81,7 @@ void	move_player(t_data *data)
     }
   else if (!data->player.isattack
 	   && !data->player.ismoving)
-    {
-      data->player.sprite->clip_x_position = 0;
-      data->player.sprite->clip_width = 70;
-      bunny_blit(&data->window->buffer,
-                 data->player.sprite,
-                 &data->player.play_pos);
-    }
+    idle_anim(data);
   else if (data->player.isattack == true)
     anim_attck(data);
 }

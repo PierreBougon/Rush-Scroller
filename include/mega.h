@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:39:34 2016 bougon_p
-** Last update Sat Mar 19 17:01:37 2016 bougon_p
+** Last update Sat Mar 19 18:26:49 2016 bougon_p
 */
 
 #ifndef mega_h_
@@ -24,6 +24,7 @@
 # define LIMIT_RIGHT WIN_WIDTH / 2 + 150
 # define LIMIT_LEFT WIN_WIDTH / 2 - 150
 # define FLOOR 332
+# define HITBOX 80
 
 # define SKY 0xFF705A4E
 # define GREY 0xFF252525
@@ -31,15 +32,16 @@
 typedef	struct		s_player
 {
   t_bunny_picture	*sprite;
+  t_bunny_picture	*stay;
   t_bunny_picture	*attck;
   int			wait;
   int			tim;
+  int			tim_idle;
   int			timatt;
   t_bunny_position	attck_pos;
   t_bunny_position	play_pos;
   t_bunny_position	real_pos;
   bool			stateright;
-
   bool			ismoving;
   bool			onborderright;
   bool			onborderleft;
