@@ -5,7 +5,7 @@
 ## Login   <bougon_p@epitech.net>
 ## 
 ## Started on  Fri Mar 18 20:18:33 2016 bougon_p
-## Last update Sat Mar 19 18:57:15 2016 marc brout
+## Last update Sat Mar 19 19:36:31 2016 bougon_p
 ##
 
 # USEFUL VARIABLES
@@ -25,7 +25,7 @@ MAIN		=	src/
 
 PLAYER		=	src/player/
 
-SAMPLER		=	sampler/
+SAMPLER		=	src/sampler/
 
 SRC		=	$(MAIN)main.c \
 			$(MAIN)background.c \

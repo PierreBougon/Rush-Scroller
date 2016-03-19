@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:25:37 2016 bougon_p
-** Last update Sat Mar 19 19:23:30 2016 marc brout
+** Last update Sat Mar 19 19:36:56 2016 bougon_p
 */
 
 #include "mega.h"
@@ -58,7 +58,7 @@ int		main()
 
   srand(time(NULL));
   inc = 50;
-  set_max_heap_size(20000000);
+  set_max_heap_size(50000000);
   if (init_sprites(&data) == 1 || init_player(&data) == 1 ||
       init_sampler(&data))
     return (1);
