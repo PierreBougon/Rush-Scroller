@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:25:37 2016 bougon_p
-** Last update Sat Mar 19 17:08:13 2016 benjamin duhieu
+** Last update Sat Mar 19 18:55:43 2016 marc brout
 */
 
 #include <stdio.h>
@@ -28,6 +28,9 @@ t_bunny_response	esc_key(t_bunny_event_state state,
       if (keysym == BKS_M)
 	change_music(data->samples, &data->curmusic,
 		     &data->change, -1);
+      if (keysym == BKS_O)
+	data->samples[data->curmusic]->sinus =
+	  (data->samples[data->curmusic]->sinus) ? 0 : 1;
     }
   return (GO_ON);
 }
@@ -59,9 +62,9 @@ int		main()
       !(data.samples[2] = load_bsf(BSF_3, SAMPLE_FOLD)) ||
       !(data.samples[3] = load_bsf(BSF_4, SAMPLE_FOLD)))
     return (1);
-  data.window = bunny_start(WIN_WIDTH, WIN_HEIGHT, 0, "DEMO");
   data.curmusic = 0;
   data.change = 0;
+  data.window = bunny_start(WIN_WIDTH, WIN_HEIGHT, 0, "DEMO");
   bunny_set_loop_main_function(mainloop);
   bunny_set_key_response(esc_key);
   bunny_set_click_response(click_actions);

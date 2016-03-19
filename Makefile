@@ -5,7 +5,7 @@
 ## Login   <bougon_p@epitech.net>
 ## 
 ## Started on  Fri Mar 18 20:18:33 2016 bougon_p
-## Last update Sat Mar 19 16:58:05 2016 bougon_p
+## Last update Sat Mar 19 18:57:15 2016 marc brout
 ##
 
 # USEFUL VARIABLES
@@ -25,6 +25,8 @@ MAIN		=	src/
 
 PLAYER		=	src/player/
 
+SAMPLER		=	sampler/
+
 SRC		=	$(MAIN)main.c \
 			$(MAIN)background.c \
 			$(MAIN)delete.c \
@@ -33,6 +35,8 @@ SRC		=	$(MAIN)main.c \
 			$(MAIN)init_sprites.c \
 			$(PLAYER)player.c \
 			$(PLAYER)player_moves.c \
+			$(SAMPLER)sampler.c \
+			$(SAMPLER)init_sampler.c \
 
 OBJS    	=	$(SRC:.c=.o)
 
@@ -56,7 +60,7 @@ IFLAG	=	-Iinclude/
 
 CFLAGS  =	-W -Wall -Wextra -g $(IFLAG)
 
-CC      =	gcc $(CFLAGS)
+CC      =	gcc $(CFLAGS) -D LAPIN_ALLOCATOR_DEACTIVATED
 
 
 

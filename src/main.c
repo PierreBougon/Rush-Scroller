@@ -5,14 +5,13 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:25:37 2016 bougon_p
-** Last update Sat Mar 19 16:55:30 2016 bougon_p
+** Last update Sat Mar 19 19:06:51 2016 marc brout
 */
 
 #include "mega.h"
 
 t_bunny_response	button_key(t_bunny_event_state state,
-                                t_bunny_keysym keysym, void *_data\
-				)
+                                t_bunny_keysym keysym, void *_data)
 {
   t_data		*data;
 
@@ -20,11 +19,13 @@ t_bunny_response	button_key(t_bunny_event_state state,
   if (keysym == BKS_ESCAPE && state == GO_DOWN)
     return (EXIT_ON_SUCCESS);
   check_player_movement(data, keysym, state);
+  if (state == GO_DOWN)
+    sampler_keys(data, keysym);
   return (GO_ON);
 }
 
 t_bunny_response	click_actions(UNUSED t_bunny_event_state state,
-                                      UNUSED t_bunny_mousebutton button, \
+                                      UNUSED t_bunny_mousebutton button,
 				      void *_data)
 {
   UNUSED t_data		*data;
@@ -39,9 +40,10 @@ t_bunny_response	mainloop(void *_data)
 
   data = _data;
   draw_bg(data);
+  sampler(data->samples[data->curmusic], &data->change);
   move_player(data);
   bunny_blit(&data->window->buffer, data->back.fence, &data->back.pos_fence);
-    bunny_blit(&data->window->buffer, data->back.tree2, &data->back.pos_tree2);
+  bunny_blit(&data->window->buffer, data->back.tree2, &data->back.pos_tree2);
   bunny_display(data->window);
   return (GO_ON);
 }
@@ -51,8 +53,9 @@ int		main()
   t_data	data;
 
   srand(time(NULL));
-  set_max_heap_size(20000000);
-  if (init_sprites(&data) == 1 || init_player(&data) == 1)
+  set_max_heap_size(50000000);
+  if (init_sprites(&data) == 1 || init_player(&data) == 1 ||
+      init_sampler(&data))
     return (1);
   data.window = bunny_start(WIN_WIDTH, WIN_HEIGHT, 1, "MEGAMAN");
   bunny_set_loop_main_function(mainloop);
