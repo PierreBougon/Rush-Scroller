@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 **
 ** Started on  Fri Mar 18 22:45:25 2016 marc brout
-** Last update Sat Mar 19 19:17:08 2016 marc brout
+** Last update Sat Mar 19 21:10:14 2016 marc brout
 */
 
 #ifndef SAMPLER_H_
@@ -27,7 +27,6 @@ typedef	struct		s_sample
   t_bunny_effect	*music;
   t_bunny_ini		*ini;
   t_bunny_ini_scope	*scope;
-  t_bunny_effect	*effect;
   double		*pitch;
   int			lenpit;
   double		*duration;
@@ -61,5 +60,7 @@ void		change_music(t_sample **samples,
 			     int i);
 void		sampler(t_sample *sample,
 			int *change);
+int		load_double_duration(t_sample *samp);
+int		load_double_frequency(t_sample *samp);
 
 #endif

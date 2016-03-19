@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:39:34 2016 bougon_p
-** Last update Sat Mar 19 19:21:36 2016 marc brout
+** Last update Sat Mar 19 21:10:50 2016 marc brout
 */
 
 #ifndef mega_h_
@@ -95,6 +95,7 @@ void	scroll(t_bunny_picture *);
 ** init_sampler.c
 */
 
+void	free_sampler(t_data *data);
 int	init_sampler(t_data *data);
 void	sampler_keys(t_data *data,
 		     t_bunny_keysym keysym);

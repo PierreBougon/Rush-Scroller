@@ -5,7 +5,7 @@
 ## Login   <bougon_p@epitech.net>
 ## 
 ## Started on  Fri Mar 18 20:18:33 2016 bougon_p
-## Last update Sat Mar 19 18:57:15 2016 marc brout
+## Last update Sat Mar 19 20:24:00 2016 marc brout
 ##
 
 # USEFUL VARIABLES
@@ -37,6 +37,7 @@ SRC		=	$(MAIN)main.c \
 			$(PLAYER)player_moves.c \
 			$(SAMPLER)sampler.c \
 			$(SAMPLER)init_sampler.c \
+			$(SAMPLER)load_double_tab.c
 
 OBJS    	=	$(SRC:.c=.o)
 
