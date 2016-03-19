@@ -5,7 +5,7 @@
 ** Login   <marc brout@epitech.net>
 **
 ** Started on  Fri Mar 18 22:44:57 2016 marc brout
-** Last update Sat Mar 19 18:59:32 2016 marc brout
+** Last update Sat Mar 19 20:05:45 2016 bougon_p
 */
 
 #include <math.h>
@@ -54,7 +54,7 @@ int		load_double_frequency(t_sample *samp)
 {
   const char		*tmp;
 
-  if (!(samp->pitch = malloc(sizeof(double))))
+  if (!(samp->pitch = bunny_malloc(sizeof(double))))
     return (1);
   samp->lenpit = 0;
   while ((tmp = bunny_ini_scope_get_field(samp->scope, "frequency",
@@ -73,7 +73,7 @@ int		load_double_duration(t_sample *samp)
 {
   const char		*tmp;
 
-  if (!(samp->duration = malloc(sizeof(double))))
+  if (!(samp->duration = bunny_malloc(sizeof(double))))
     return (1);
   samp->lendur = 0;
   while ((tmp = bunny_ini_scope_get_field(samp->scope, "duration",
@@ -104,7 +104,7 @@ t_sample	*load_bsf(const char *file, const char *path)
 	bunny_ini_scope_get_field(samp->scope, "sample", 0)))
     return (NULL);
   len = strlen(filename) + strlen(path) + 1;
-  if (!(musicpath = malloc(len + 1)) ||
+  if (!(musicpath = bunny_malloc(len + 1)) ||
       snprintf(musicpath, len + 1, "%s%c%s", path, '/', filename) < 0)
     return (NULL);
   printf("%s \n", musicpath);

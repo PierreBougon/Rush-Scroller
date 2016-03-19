@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sat Mar 19 00:06:52 2016 bougon_p
-** Last update Sat Mar 19 19:04:39 2016 benjamin duhieu
+** Last update Sat Mar 19 20:17:04 2016 bougon_p
 */
 
 #include "mega.h"
@@ -66,6 +66,8 @@ int	init_sprites(t_data *data)
       !(data->player.attck = bunny_load_picture("img/attack.png")) ||
       !(data->player.stay = bunny_load_picture("img/stay.png")))
     return (1);
+  data->player.attck->scale.x = 1.03;
+  data->player.attck->scale.y = 1.03;
   next_init(data);
   final_init(data);
   return (0);
