@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sat Mar 19 00:06:52 2016 bougon_p
-** Last update Sat Mar 19 17:37:22 2016 benjamin duhieu
+** Last update Sat Mar 19 19:02:20 2016 benjamin duhieu
 */
 
 #include "mega.h"
@@ -20,8 +20,8 @@ void	final_init(t_data *data)
   data->back.pos_grass2[2].x = data->back.grass2[2]->clip_width;
   data->back.tree2->scale.x = 3.0;
   data->back.tree2->scale.y = 3.0;
-  data->back.pos_fence.y = 250;
-  data->back.fence->scale.y = 2.0;
+  data->back.pos_fence.y = 300;
+  data->back.fence->scale.y = 1.5;
   data->back.pos_fence.x = rand() %
     (data->back.mount2->clip_width * 2) + data->back.back->clip_width;
 }
@@ -38,7 +38,7 @@ void	next_init(t_data *data)
   data->back.pos_mount2.y = 40;
   data->back.pos_rab.y = 300;
   data->back.pos_rab.x = rand() % data->back.mount2->clip_width;
-  data->back.pos_tree.y = 110;
+  data->back.pos_tree.y = 120;
   data->back.pos_tree.x = rand() % data->back.mount2->clip_width;
   data->back.pos_tree2.y = -200;
   data->back.pos_tree2.x = rand() % data->back.mount2->clip_width;
