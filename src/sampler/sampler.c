@@ -5,7 +5,7 @@
 ** Login   <marc brout@epitech.net>
 **
 ** Started on  Fri Mar 18 22:44:57 2016 marc brout
-** Last update Sat Mar 19 20:05:45 2016 bougon_p
+** Last update Sat Mar 19 22:22:12 2016 bougon_p
 */
 
 #include <math.h>
@@ -50,44 +50,6 @@ void		sampler(t_sample *sample, int *change)
   i = (int)(i + 1) % 150000;
 }
 
-int		load_double_frequency(t_sample *samp)
-{
-  const char		*tmp;
-
-  if (!(samp->pitch = bunny_malloc(sizeof(double))))
-    return (1);
-  samp->lenpit = 0;
-  while ((tmp = bunny_ini_scope_get_field(samp->scope, "frequency",
-					  samp->lenpit)))
-    {
-      if (!(samp->pitch = realloc(samp->pitch, sizeof(double) *
-				  (samp->lenpit + 1))))
-	return (1);
-      samp->pitch[samp->lenpit] = atof(tmp);
-      samp->lenpit += 1;
-    }
-  return (0);
-}
-
-int		load_double_duration(t_sample *samp)
-{
-  const char		*tmp;
-
-  if (!(samp->duration = bunny_malloc(sizeof(double))))
-    return (1);
-  samp->lendur = 0;
-  while ((tmp = bunny_ini_scope_get_field(samp->scope, "duration",
-					  samp->lendur)))
-    {
-      if (!(samp->duration = realloc(samp->duration, sizeof(double) *
-				     (samp->lendur + 1))))
-	return (1);
-      samp->duration[samp->lendur] = atof(tmp);
-      samp->lendur += 1;
-    }
-  return (0);
-}
-
 t_sample	*load_bsf(const char *file, const char *path)
 {
   t_sample	*samp;
@@ -107,7 +69,6 @@ t_sample	*load_bsf(const char *file, const char *path)
   if (!(musicpath = bunny_malloc(len + 1)) ||
       snprintf(musicpath, len + 1, "%s%c%s", path, '/', filename) < 0)
     return (NULL);
-  printf("%s \n", musicpath);
   if (!(samp->music = bunny_load_effect(musicpath)) ||
       load_double_duration(samp) || load_double_frequency(samp))
     return (NULL);

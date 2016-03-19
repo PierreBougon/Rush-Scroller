@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:39:34 2016 bougon_p
-** Last update Sat Mar 19 19:21:36 2016 marc brout
+** Last update Sat Mar 19 22:26:27 2016 bougon_p
 */
 
 #ifndef mega_h_
@@ -24,7 +24,7 @@
 # define LIMIT_RIGHT WIN_WIDTH / 2 + 150
 # define LIMIT_LEFT WIN_WIDTH / 2 - 150
 # define FLOOR 332
-# define HITBOX 80
+# define HITBOX 100
 
 # define SKY 0xFF705A4E
 # define GREY 0xFF252525
@@ -95,6 +95,7 @@ void	scroll(t_bunny_picture *);
 ** init_sampler.c
 */
 
+void	free_sampler(t_data *data);
 int	init_sampler(t_data *data);
 void	sampler_keys(t_data *data,
 		     t_bunny_keysym keysym);

@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 **
 ** Started on  Sat Mar 19 18:09:47 2016 marc brout
-** Last update Sat Mar 19 19:16:57 2016 marc brout
+** Last update Sat Mar 19 21:08:20 2016 marc brout
 */
 
 #include "sampler.h"
@@ -31,4 +31,19 @@ void	sampler_keys(t_data *data, t_bunny_keysym keysym)
   if (keysym == BKS_O)
     data->samples[data->curmusic]->sinus =
       (data->samples[data->curmusic]->sinus) ? 0 : 1;
+}
+
+void	free_sampler(t_data *data)
+{
+  int	i;
+
+  i = 0;
+  while (i < NB_SAMPLES)
+    {
+      bunny_free(data->samples[i]->pitch);
+      bunny_free(data->samples[i]->duration);
+      bunny_delete_ini(data->samples[i]->ini);
+      bunny_delete_sound(&data->samples[i]->music->sound);
+      i += 1;
+    }
 }
