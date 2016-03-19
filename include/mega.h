@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:39:34 2016 bougon_p
-** Last update Sat Mar 19 22:46:13 2016 bougon_p
+** Last update Sat Mar 19 22:46:26 2016 bougon_p
 */
 
 #ifndef mega_h_
@@ -81,7 +81,7 @@ typedef struct		s_state
 
 typedef struct		s_menu
 {
-  t_bunny_pixelarray	*pixelarray;
+  t_bunny_pixelarray	*menu;
 }			t_menu;
 
 typedef	struct		s_data
