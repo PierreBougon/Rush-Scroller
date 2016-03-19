@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sat Mar 19 02:01:36 2016 bougon_p
-** Last update Sat Mar 19 18:56:53 2016 bougon_p
+** Last update Sat Mar 19 19:47:40 2016 benjamin duhieu
 */
 
 #include "mega.h"
@@ -27,8 +27,8 @@ void			anim_attck(t_data *data)
 {
   t_bunny_position	pos;
 
-  printf("\n##RABBIT POSITIONS##\nON SCREEN = x -> %d && y -> %d\n\n"
-	 , data->back.pos_rab.x, data->back.pos_rab.y);
+  /* printf("\n##RABBIT POSITIONS##\nON SCREEN = x -> %d && y -> %d\n\n" *Ì/ */
+  /* 	 , data->back.pos_rab.x, data->back.pos_rab.y); */
   data->player.wait++;
   if (data->player.wait % 3 == 0)
     data->player.timatt++;
@@ -120,10 +120,10 @@ void	refresh_player_pos(t_player *player)
       else if (player->play_pos.x >= LIMIT_RIGHT)
 	player->onborderright = true;
     }
-  printf("\n##PLAYER POSITIONS##\nREAL = x -> %d && y -> %d\n\
-ON SCREEN = x -> %d && y -> %d\n\n", player->real_pos.x,
-	 player->real_pos.y, player->play_pos.x,
-	 player->play_pos.y);
+  /*   printf("\n##PLAYER POSITIONS##\nREAL = x -> %d && y -> %d\n */
+/* ON SCREEN = x -> %d && y -> %d\n\n", player->real_pos.x, */
+/* 	 player->real_pos.y, player->play_pos.x, */
+/* 	 player->play_pos.y); */
 }
 
 void	check_player_movement(t_data *data, t_bunny_keysym keysym,

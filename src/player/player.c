@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sat Mar 19 00:12:11 2016 bougon_p
-** Last update Sat Mar 19 18:36:41 2016 bougon_p
+** Last update Sat Mar 19 19:41:27 2016 benjamin duhieu
 */
 
 #include "mega.h"
@@ -32,7 +32,7 @@ int	init_player(t_data *data)
 
 void	rotate_player_left(t_player *player)
 {
-  printf("ROTATE LEFT\n");
+  /* printf("ROTATE LEFT\n"); */
   player->sprite->scale.x = -1.0;
   player->play_pos.x += 70;
   player->stay->scale.x = -1.0;
@@ -43,7 +43,7 @@ void	rotate_player_left(t_player *player)
 
 void	rotate_player_right(t_player *player)
 {
-  printf("ROTATE RIGHT\n");
+  /* printf("ROTATE RIGHT\n"); */
   player->sprite->scale.x = 1.0;
   player->play_pos.x -= 70;
   player->stay->scale.x = 1.0;
