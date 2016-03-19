@@ -5,7 +5,11 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:25:37 2016 bougon_p
+<<<<<<< HEAD
 ** Last update Sat Mar 19 20:43:09 2016 benjamin duhieu
+=======
+** Last update Sat Mar 19 22:22:22 2016 bougon_p
+>>>>>>> 3dde0c0e89fa69b1a73aafe243d5149a68bc5b17
 */
 
 #include "mega.h"
@@ -13,8 +17,7 @@
 int	inc;
 
 t_bunny_response	button_key(t_bunny_event_state state,
-                                t_bunny_keysym keysym, void *_data\
-				)
+                                t_bunny_keysym keysym, void *_data)
 {
   t_data		*data;
 
@@ -24,11 +27,13 @@ t_bunny_response	button_key(t_bunny_event_state state,
   if (keysym == BKS_C && state == GO_DOWN)
     data->kill = 1;
   check_player_movement(data, keysym, state);
+  if (state == GO_DOWN)
+    sampler_keys(data, keysym);
   return (GO_ON);
 }
 
 t_bunny_response	click_actions(UNUSED t_bunny_event_state state,
-                                      UNUSED t_bunny_mousebutton button, \
+                                      UNUSED t_bunny_mousebutton button,
 				      void *_data)
 {
   UNUSED t_data		*data;
@@ -43,6 +48,7 @@ t_bunny_response	mainloop(void *_data)
 
   data = _data;
   draw_bg(data);
+  sampler(data->samples[data->curmusic], &data->change);
   move_player(data);
   bunny_blit(&data->window->buffer, data->back.fence, &data->back.pos_fence);
   bunny_blit(&data->window->buffer, data->back.tree2, &data->back.pos_tree2);
@@ -56,8 +62,9 @@ int		main()
 
   srand(time(NULL));
   inc = 50;
-  set_max_heap_size(20000000);
-  if (init_sprites(&data) == 1 || init_player(&data) == 1)
+  bunny_set_maximum_ram(20000000);
+  if (init_sprites(&data) == 1 || init_player(&data) == 1 ||
+      init_sampler(&data))
     return (1);
   data.window = bunny_start(WIN_WIDTH, WIN_HEIGHT, 0, "MEGAMAN");
   bunny_set_loop_main_function(mainloop);
@@ -65,6 +72,7 @@ int		main()
   bunny_set_click_response(click_actions);
   bunny_loop(data.window, 60, &data);
   delete_all_clipables(&data);
+  free_sampler(&data);
   bunny_stop(data.window);
   return (0);
 }

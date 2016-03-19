@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sat Mar 19 02:01:36 2016 bougon_p
-** Last update Sat Mar 19 19:47:40 2016 benjamin duhieu
+** Last update Sat Mar 19 22:35:28 2016 benjamin duhieu
 */
 
 #include "mega.h"
@@ -14,7 +14,7 @@ void	check_murder(t_data *data)
 {
   if ((data->player.stateright
        && data->back.pos_rab.x <= data->player.play_pos.x + HITBOX
-       && data->back.pos_rab.x >data->player.play_pos.x
+       && data->back.pos_rab.x > data->player.play_pos.x
        && data->player.isattack)
       || (!data->player.stateright
 	  && data->back.pos_rab.x >= data->player.play_pos.x - HITBOX
@@ -34,8 +34,8 @@ void			anim_attck(t_data *data)
     data->player.timatt++;
   data->player.attck->clip_x_position = (data->player.timatt % 12) * 130;
   data->player.attck->clip_width = 130;
-  pos.x = data->player.play_pos.x - 30 + data->player.attck_pos.x;
-  pos.y = data->player.play_pos.y - 37;
+  pos.x = data->player.play_pos.x - 15 + data->player.attck_pos.x;
+  pos.y = data->player.play_pos.y - 39;
   bunny_blit(&data->window->buffer,
 	     data->player.attck,
 	     &pos);
@@ -51,20 +51,24 @@ void	idle_anim(t_data *data)
 {
   if (data->player.tim_idle % 3 == 0 && data->player.wait % 40 < 38)
     {
+      data->player.play_pos.y -= 5;
       data->player.stay->clip_x_position = 0;
       data->player.stay->clip_width = 70;
       bunny_blit(&data->window->buffer, data->player.stay,
 		 &data->player.play_pos);
       data->player.wait++;
+      data->player.play_pos.y += 5;
       return ;
     }
   data->player.wait++;
   if (data->player.wait % 6 == 0)
     data->player.tim_idle++;
+  data->player.play_pos.y -= 5;
   data->player.stay->clip_x_position = (data->player.tim_idle % 3) * 70;
   data->player.stay->clip_width = 70;
   bunny_blit(&data->window->buffer, data->player.stay,
 	     &data->player.play_pos);
+  data->player.play_pos.y += 5;
 }
 
 void	move_player(t_data *data)

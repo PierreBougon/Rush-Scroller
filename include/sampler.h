@@ -1,11 +1,11 @@
 /*
-** sampler.h for scroller
+1;2802;0c** sampler.h for scroller
 **
 ** Made by marc brout
 ** Login   <brout_m@epitech.net>
 **
 ** Started on  Fri Mar 18 22:45:25 2016 marc brout
-** Last update Sat Mar 19 16:38:15 2016 marc brout
+** Last update Sat Mar 19 21:10:14 2016 marc brout
 */
 
 #ifndef SAMPLER_H_
@@ -17,12 +17,9 @@
 ** SAMPLES DEFINES
 */
 
-# define SAMPLE_FOLD "../files/sounds"
-# define BSF_1 "../files/sounds/starwars.bsf"
-# define BSF_2 "../files/sounds/mario.bsf"
-# define BSF_3 "../files/sounds/aerodynamic.bsf"
-# define BSF_4 "../files/sounds/aerodynamicLOL.bsf"
-# define NB_SAMPLES 4
+# define SAMPLE_FOLD "files/sounds"
+# define BSF_1 "files/sounds/aerodynamicLOL.bsf"
+# define NB_SAMPLES 1
 # define RAD(x) (((x) * M_PI) / 180)
 
 typedef	struct		s_sample
@@ -30,11 +27,11 @@ typedef	struct		s_sample
   t_bunny_effect	*music;
   t_bunny_ini		*ini;
   t_bunny_ini_scope	*scope;
-  t_bunny_effect	*effect;
   double		*pitch;
   int			lenpit;
   double		*duration;
   int			lendur;
+  int			sinus;
 }			t_sample;
 
 /*
@@ -63,4 +60,7 @@ void		change_music(t_sample **samples,
 			     int i);
 void		sampler(t_sample *sample,
 			int *change);
+int		load_double_duration(t_sample *samp);
+int		load_double_frequency(t_sample *samp);
+
 #endif
