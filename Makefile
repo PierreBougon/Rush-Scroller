@@ -5,7 +5,7 @@
 ## Login   <bougon_p@epitech.net>
 ## 
 ## Started on  Fri Mar 18 20:18:33 2016 bougon_p
-## Last update Sat Mar 19 22:37:07 2016 benjamin duhieu
+## Last update Sat Mar 19 23:17:10 2016 bougon_p
 ##
 
 # USEFUL VARIABLES
@@ -30,6 +30,8 @@ SAMPLER		=	src/sampler/
 SRC		=	$(MAIN)main.c \
 			$(MAIN)background.c \
 			$(MAIN)delete.c \
+			$(MAIN)init_var.c \
+			$(MAIN)display.c \
 			$(MAIN)grass.c \
 			$(MAIN)check_pos.c \
 			$(MAIN)init_sprites.c \
