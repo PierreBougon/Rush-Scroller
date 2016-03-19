@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:39:34 2016 bougon_p
-** Last update Sat Mar 19 16:37:44 2016 benjamin duhieu
+** Last update Sat Mar 19 17:01:37 2016 bougon_p
 */
 
 #ifndef mega_h_
@@ -15,13 +15,14 @@
 # include <stdio.h>
 # include <time.h>
 # include "lapin.h"
+# include "sampler.h"
 
 # define UNUSED __attribute__((__unused__))
 
 # define WIN_WIDTH 640
 # define WIN_HEIGHT 480
-# define LIMIT_RIGHT WIN_WIDTH / 2 + 50
-# define LIMIT_LEFT WIN_WIDTH / 2 - 50
+# define LIMIT_RIGHT WIN_WIDTH / 2 + 150
+# define LIMIT_LEFT WIN_WIDTH / 2 - 150
 # define FLOOR 332
 
 # define SKY 0xFF705A4E
@@ -30,8 +31,11 @@
 typedef	struct		s_player
 {
   t_bunny_picture	*sprite;
+  t_bunny_picture	*attck;
   int			wait;
   int			tim;
+  int			timatt;
+  t_bunny_position	attck_pos;
   t_bunny_position	play_pos;
   t_bunny_position	real_pos;
   bool			stateright;
@@ -39,6 +43,7 @@ typedef	struct		s_player
   bool			ismoving;
   bool			onborderright;
   bool			onborderleft;
+  bool			isattack;
 }			t_player;
 
 typedef struct		s_back
@@ -76,6 +81,9 @@ typedef	struct		s_data
 {
   t_bunny_window	*window;
   t_bunny_pixelarray	*pixarray;
+  t_sample		*samples[NB_SAMPLES];
+  int			curmusic;
+  int			change;
   t_player		player;
   t_back		back;
 }			t_data;
@@ -106,5 +114,10 @@ void	rotate_player_left(t_player *);
 void	rotate_player_right(t_player *);
 void	refresh_player_pos(t_player *);
 void	check_player_movement(t_data *, t_bunny_keysym, t_bunny_event_state);
+
+/*
+** OTHERS
+*/
+void	delete_all_clipables(t_data *);
 
 #endif /* !mega_h_  */

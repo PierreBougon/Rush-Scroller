@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:25:37 2016 bougon_p
-** Last update Sat Mar 19 15:53:28 2016 benjamin duhieu
+** Last update Sat Mar 19 16:55:30 2016 bougon_p
 */
 
 #include "mega.h"
@@ -50,22 +50,16 @@ int		main()
 {
   t_data	data;
 
-  srand(time(0));
+  srand(time(NULL));
+  set_max_heap_size(20000000);
   if (init_sprites(&data) == 1 || init_player(&data) == 1)
     return (1);
-  data.window = bunny_start(WIN_WIDTH, WIN_HEIGHT, 0, "MEGAMAN");
+  data.window = bunny_start(WIN_WIDTH, WIN_HEIGHT, 1, "MEGAMAN");
   bunny_set_loop_main_function(mainloop);
   bunny_set_key_response(button_key);
   bunny_set_click_response(click_actions);
   bunny_loop(data.window, 60, &data);
-  bunny_delete_clipable(data.back.mount);
-  bunny_delete_clipable(data.back.mount2);
-  bunny_delete_clipable(data.back.sky);
-  bunny_delete_clipable(data.back.sky2);
-  bunny_delete_clipable(data.back.gui);
-  bunny_delete_clipable(data.back.back);
-  bunny_delete_clipable(data.back.grass[0]);
-  bunny_delete_clipable(data.player.sprite);
+  delete_all_clipables(&data);
   bunny_stop(data.window);
   return (0);
 }

@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sat Mar 19 00:06:52 2016 bougon_p
-** Last update Sat Mar 19 16:21:07 2016 benjamin duhieu
+** Last update Sat Mar 19 16:57:45 2016 bougon_p
 */
 
 #include "mega.h"
@@ -62,7 +62,8 @@ int	init_sprites(t_data *data)
       !(data->back.grass[2] = bunny_load_picture("img/grass.png")) ||
       !(data->back.grass2[0] = bunny_load_picture("img/grass.png")) ||
       !(data->back.grass2[1] = bunny_load_picture("img/grass.png")) ||
-      !(data->back.grass2[2] = bunny_load_picture("img/grass.png")))
+      !(data->back.grass2[2] = bunny_load_picture("img/grass.png")) ||
+      !(data->player.attck = bunny_load_picture("img/attack.png")))
     return (1);
   next_init(data);
   final_init(data);

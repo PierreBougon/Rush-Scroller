@@ -5,7 +5,7 @@
 ## Login   <bougon_p@epitech.net>
 ## 
 ## Started on  Fri Mar 18 20:18:33 2016 bougon_p
-## Last update Sat Mar 19 16:58:05 2016 bougon_p
+## Last update Sat Mar 19 17:08:49 2016 benjamin duhieu
 ##
 
 # USEFUL VARIABLES
@@ -21,18 +21,10 @@ ECHO	=	echo -e
 
 # SOURCES VARIABLES
 
-MAIN		=	src/
+MAIN		=	./
 
-PLAYER		=	src/player/
-
-SRC		=	$(MAIN)main.c \
-			$(MAIN)background.c \
-			$(MAIN)delete.c \
-			$(MAIN)grass.c \
-			$(MAIN)check_pos.c \
-			$(MAIN)init_sprites.c \
-			$(PLAYER)player.c \
-			$(PLAYER)player_moves.c \
+SRC		=	$(MAIN)sampler.c \
+			$(MAIN)main.c \
 
 OBJS    	=	$(SRC:.c=.o)
 
@@ -50,13 +42,13 @@ FLAG    =       -I/home/${USER}/.froot\
 
 # PROJECT VARIABLES
 
-NAME	=	MegaDemo
+NAME	=	demo
 
-IFLAG	=	-Iinclude/
+IFLAG	=	-I../include/
 
-CFLAGS  =	-W -Wall -Wextra -g $(IFLAG)
+CFLAGS  =	-W -Wall -Wextra $(IFLAG)
 
-CC      =	gcc $(CFLAGS)
+CC      =	gcc -g $(CFLAGS)
 
 
 
