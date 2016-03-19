@@ -5,10 +5,12 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:25:37 2016 bougon_p
-** Last update Sat Mar 19 16:55:30 2016 bougon_p
+** Last update Sat Mar 19 18:42:06 2016 benjamin duhieu
 */
 
 #include "mega.h"
+
+int	inc;
 
 t_bunny_response	button_key(t_bunny_event_state state,
                                 t_bunny_keysym keysym, void *_data\
@@ -19,6 +21,8 @@ t_bunny_response	button_key(t_bunny_event_state state,
   data = _data;
   if (keysym == BKS_ESCAPE && state == GO_DOWN)
     return (EXIT_ON_SUCCESS);
+  if (keysym == BKS_C && state == GO_DOWN)
+    data->kill = 1;
   check_player_movement(data, keysym, state);
   return (GO_ON);
 }
@@ -41,7 +45,7 @@ t_bunny_response	mainloop(void *_data)
   draw_bg(data);
   move_player(data);
   bunny_blit(&data->window->buffer, data->back.fence, &data->back.pos_fence);
-    bunny_blit(&data->window->buffer, data->back.tree2, &data->back.pos_tree2);
+  bunny_blit(&data->window->buffer, data->back.tree2, &data->back.pos_tree2);
   bunny_display(data->window);
   return (GO_ON);
 }
@@ -51,6 +55,7 @@ int		main()
   t_data	data;
 
   srand(time(NULL));
+  inc = 50;
   set_max_heap_size(20000000);
   if (init_sprites(&data) == 1 || init_player(&data) == 1)
     return (1);

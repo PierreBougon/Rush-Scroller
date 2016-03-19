@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sat Mar 19 03:27:05 2016 bougon_p
-** Last update Sat Mar 19 16:27:07 2016 benjamin duhieu
+** Last update Sat Mar 19 18:48:58 2016 benjamin duhieu
 */
 
 #include "mega.h"
@@ -62,6 +62,28 @@ void	draw_sky(t_data *data)
   i++;
 }
 
+void	rabbit(t_data *data)
+{
+  static int	i = 0;
+  static int	count = 0;
+
+  if (!data->kill)
+    {
+      bunny_blit(&data->window->buffer, data->back.rabbit, &data->back.pos_rab);
+      i = 0;
+      count = 0;
+    }
+  else
+    {
+      i++;
+      if (!(i % 10) && count < 3)
+	{
+	  bunny_blit(&data->window->buffer, data->back.rabbit, &data->back.pos_rab);
+	  count++;
+	}
+    }
+}
+
 void	draw_bg(t_data *data)
 {
   bunny_fill(&data->back.back->buffer, SKY);
@@ -81,7 +103,7 @@ void	draw_bg(t_data *data)
   	     &data->back.pos_mount);
   bunny_blit(&data->window->buffer, data->back.mount2,
   	     &data->back.pos_mount2);
-  bunny_blit(&data->window->buffer, data->back.rabbit, &data->back.pos_rab);
+  rabbit(data);
   bunny_blit(&data->window->buffer, data->back.tree, &data->back.pos_tree);
   draw_grass(data);
 }

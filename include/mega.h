@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:39:34 2016 bougon_p
-** Last update Sat Mar 19 17:01:37 2016 bougon_p
+** Last update Sat Mar 19 18:01:04 2016 benjamin duhieu
 */
 
 #ifndef mega_h_
@@ -84,6 +84,7 @@ typedef	struct		s_data
   t_sample		*samples[NB_SAMPLES];
   int			curmusic;
   int			change;
+  int			kill;
   t_player		player;
   t_back		back;
 }			t_data;
