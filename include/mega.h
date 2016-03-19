@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:39:34 2016 bougon_p
-** Last update Sat Mar 19 18:50:56 2016 marc brout
+** Last update Sat Mar 19 19:21:36 2016 marc brout
 */
 
 #ifndef mega_h_
@@ -24,6 +24,7 @@
 # define LIMIT_RIGHT WIN_WIDTH / 2 + 150
 # define LIMIT_LEFT WIN_WIDTH / 2 - 150
 # define FLOOR 332
+# define HITBOX 80
 
 # define SKY 0xFF705A4E
 # define GREY 0xFF252525
@@ -31,15 +32,16 @@
 typedef	struct		s_player
 {
   t_bunny_picture	*sprite;
+  t_bunny_picture	*stay;
   t_bunny_picture	*attck;
   int			wait;
   int			tim;
+  int			tim_idle;
   int			timatt;
   t_bunny_position	attck_pos;
   t_bunny_position	play_pos;
   t_bunny_position	real_pos;
   bool			stateright;
-
   bool			ismoving;
   bool			onborderright;
   bool			onborderleft;
@@ -63,8 +65,6 @@ typedef struct		s_back
   t_bunny_position	pos_gui;
   t_bunny_picture	*grass[3];
   t_bunny_picture	*grass2[3];
-  t_bunny_picture	*ground;
-  t_bunny_picture	*ground2;
   t_bunny_picture	*fence;
   t_bunny_picture	*rabbit;
   t_bunny_picture	*tree;
@@ -84,6 +84,7 @@ typedef	struct		s_data
   t_sample		*samples[NB_SAMPLES];
   int			curmusic;
   int			change;
+  int			kill;
   t_player		player;
   t_back		back;
 }			t_data;
