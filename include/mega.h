@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:39:34 2016 bougon_p
-** Last update Sat Mar 19 23:06:13 2016 benjamin duhieu
+** Last update Sat Mar 19 23:12:08 2016 benjamin duhieu
 */
 
 #ifndef mega_h_
@@ -73,9 +73,16 @@ typedef struct		s_back
   t_bunny_picture	*gui;
 }			t_back;
 
+typedef struct		s_state
+{
+  bool			menu;
+  bool			game;
+  bool			end;
+}			t_state;
+
 typedef struct		s_menu
 {
-  t_bunny_pixelarray	*pixelarray;
+  t_bunny_pixelarray	*menu;
 }			t_menu;
 
 typedef	struct		s_data
@@ -88,6 +95,7 @@ typedef	struct		s_data
   int			kill;
   t_player		player;
   t_back		back;
+  t_state		state;
 }			t_data;
 
 void	scroll(t_bunny_picture *);
