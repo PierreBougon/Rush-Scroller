@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:39:34 2016 bougon_p
-** Last update Sat Mar 19 21:10:50 2016 marc brout
+** Last update Sat Mar 19 22:38:44 2016 marc brout
 */
 
 #ifndef mega_h_
@@ -76,6 +76,11 @@ typedef struct		s_back
   t_bunny_picture	*back;
   t_bunny_picture	*gui;
 }			t_back;
+
+typedef struct		s_menu
+{
+  t_bunny_pixelarray	*pixelarray;
+}			t_menu;
 
 typedef	struct		s_data
 {
