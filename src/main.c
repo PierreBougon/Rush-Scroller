@@ -5,11 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:25:37 2016 bougon_p
-<<<<<<< HEAD
-** Last update Sat Mar 19 19:20:23 2016 marc brout
-=======
-** Last update Sat Mar 19 18:52:22 2016 bougon_p
->>>>>>> 0628692706515495d5320f9c6bcd07668b97c7f4
+** Last update Sat Mar 19 19:23:30 2016 marc brout
 */
 
 #include "mega.h"
