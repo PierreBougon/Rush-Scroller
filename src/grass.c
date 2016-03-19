@@ -5,7 +5,7 @@
 ** Login   <duhieu_b@epitech.net>
 **
 ** Started on  Sat Mar 19 16:23:53 2016 benjamin duhieu
-** Last update Sat Mar 19 19:53:43 2016 benjamin duhieu
+** Last update Sat Mar 19 23:10:25 2016 benjamin duhieu
 */
 
 #include "mega.h"
@@ -28,7 +28,7 @@ void	draw_grass(t_data *data)
 	  y += 28;
 	  bunny_blit(&data->window->buffer, data->back.grass,
 		     &data->back.pos_grass[i]);
-	  bunny_blit(&data->window->buffer, data->back.grass,
+	  bunny_blit(&data->window->buffer, data->back.grass2,
 		     &data->back.pos_grass2[i]);
 	}
     }
@@ -46,16 +46,16 @@ void	grass_move(t_data *data, int j)
       if (j == -1)
 	{
 	  if (data->back.pos_grass[i].x <= -data->back.grass->clip_width)
-	    data->back.pos_grass[i].x = data->back.back->clip_width;
-	  if (data->back.pos_grass2[i].x <= -data->back.grass->clip_width)
-	    data->back.pos_grass2[i].x = data->back.back->clip_width;
+	    data->back.pos_grass[i].x = data->back.grass->clip_width;
+	  if (data->back.pos_grass2[i].x <= -data->back.grass2->clip_width)
+	    data->back.pos_grass2[i].x = data->back.grass2->clip_width;
 	}
       if (j == 1)
 	{
-	  if (data->back.pos_grass[i].x >= data->back.back->clip_width)
-	    data->back.pos_grass[i].x = -data->back.back->clip_width;
-	  if (data->back.pos_grass2[i].x >= data->back.back->clip_width)
-	    data->back.pos_grass2[i].x = -data->back.back->clip_width;
+	  if (data->back.pos_grass[i].x >= data->back.grass->clip_width)
+	    data->back.pos_grass[i].x = -data->back.grass->clip_width;
+	  if (data->back.pos_grass2[i].x >= data->back.grass2->clip_width)
+	    data->back.pos_grass2[i].x = -data->back.grass2->clip_width;
 	}
     }
 }
