@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:39:34 2016 bougon_p
-** Last update Sat Mar 19 18:53:19 2016 bougon_p
+** Last update Sat Mar 19 19:18:46 2016 benjamin duhieu
 */
 
 #ifndef mega_h_
@@ -65,8 +65,6 @@ typedef struct		s_back
   t_bunny_position	pos_gui;
   t_bunny_picture	*grass[3];
   t_bunny_picture	*grass2[3];
-  t_bunny_picture	*ground;
-  t_bunny_picture	*ground2;
   t_bunny_picture	*fence;
   t_bunny_picture	*rabbit;
   t_bunny_picture	*tree;
