@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:39:34 2016 bougon_p
-** Last update Sat Mar 19 22:38:44 2016 marc brout
+** Last update Sat Mar 19 22:43:56 2016 marc brout
 */
 
 #ifndef mega_h_
@@ -24,7 +24,7 @@
 # define LIMIT_RIGHT WIN_WIDTH / 2 + 150
 # define LIMIT_LEFT WIN_WIDTH / 2 - 150
 # define FLOOR 332
-# define HITBOX 80
+# define HITBOX 100
 
 # define SKY 0xFF705A4E
 # define GREY 0xFF252525
@@ -60,19 +60,14 @@ typedef struct		s_back
   t_bunny_position	pos_fence;
   t_bunny_position	pos_grass[3];
   t_bunny_position	pos_grass2[3];
-  t_bunny_position	pos_ground;
-  t_bunny_position	pos_ground2;
   t_bunny_position	pos_gui;
-  t_bunny_picture	*grass[3];
-  t_bunny_picture	*grass2[3];
+  t_bunny_picture	*grass;
   t_bunny_picture	*fence;
   t_bunny_picture	*rabbit;
   t_bunny_picture	*tree;
   t_bunny_picture	*tree2;
   t_bunny_picture	*mount;
-  t_bunny_picture	*mount2;
   t_bunny_picture	*sky;
-  t_bunny_picture	*sky2;
   t_bunny_picture	*back;
   t_bunny_picture	*gui;
 }			t_back;
@@ -123,11 +118,14 @@ void	draw_left(t_data *);
 void	draw_right(t_data *);
 void	draw_sky(t_data *);
 void	grass_move(t_data *, int);
+void	init_tree(t_data *);
 void	move_player(t_data *);
 void	rotate_player_left(t_player *);
 void	rotate_player_right(t_player *);
 void	refresh_player_pos(t_player *);
-void	check_player_movement(t_data *, t_bunny_keysym, t_bunny_event_state);
+void	check_player_movement(t_data *,
+			      t_bunny_keysym,
+			      t_bunny_event_state);
 
 /*
 ** OTHERS

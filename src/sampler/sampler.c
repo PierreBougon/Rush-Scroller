@@ -5,7 +5,7 @@
 ** Login   <marc brout@epitech.net>
 **
 ** Started on  Fri Mar 18 22:44:57 2016 marc brout
-** Last update Sat Mar 19 20:23:31 2016 marc brout
+** Last update Sat Mar 19 22:22:12 2016 bougon_p
 */
 
 #include <math.h>
@@ -66,7 +66,7 @@ t_sample	*load_bsf(const char *file, const char *path)
 	bunny_ini_scope_get_field(samp->scope, "sample", 0)))
     return (NULL);
   len = strlen(filename) + strlen(path) + 1;
-  if (!(musicpath = malloc(len + 1)) ||
+  if (!(musicpath = bunny_malloc(len + 1)) ||
       snprintf(musicpath, len + 1, "%s%c%s", path, '/', filename) < 0)
     return (NULL);
   if (!(samp->music = bunny_load_effect(musicpath)) ||
