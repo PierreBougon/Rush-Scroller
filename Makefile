@@ -5,7 +5,7 @@
 ## Login   <bougon_p@epitech.net>
 ## 
 ## Started on  Fri Mar 18 20:18:33 2016 bougon_p
-## Last update Sat Mar 19 22:37:07 2016 benjamin duhieu
+## Last update Sat Mar 19 23:41:04 2016 marc brout
 ##
 
 # USEFUL VARIABLES
@@ -27,6 +27,12 @@ PLAYER		=	src/player/
 
 SAMPLER		=	src/sampler/
 
+FIRE		=	src/fire/
+
+WAVE		=	src/wave/
+
+MORT		=	src/mort/
+
 SRC		=	$(MAIN)main.c \
 			$(MAIN)background.c \
 			$(MAIN)delete.c \
@@ -37,7 +43,14 @@ SRC		=	$(MAIN)main.c \
 			$(PLAYER)player_moves.c \
 			$(SAMPLER)sampler.c \
 			$(SAMPLER)init_sampler.c \
-			$(SAMPLER)load_double_tab.c
+			$(SAMPLER)load_double_tab.c \
+			$(FIRE)aff_fire.c \
+			$(FIRE)fire.c \
+			$(FIRE)fire_loop.c \
+			$(WAVE)rohan.c \
+			$(WAVE)new.c \
+			$(MORT)mort.c \
+			$(MORT)new_mort.c
 
 OBJS    	=	$(SRC:.c=.o)
 

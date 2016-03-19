@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:39:34 2016 bougon_p
-** Last update Sat Mar 19 22:45:39 2016 marc brout
+** Last update Sat Mar 19 22:56:18 2016 marc brout
 */
 
 #ifndef mega_h_
@@ -16,6 +16,7 @@
 # include <time.h>
 # include "lapin.h"
 # include "sampler.h"
+# include "fire.h"
 
 # define UNUSED __attribute__((__unused__))
 
@@ -75,6 +76,7 @@ typedef struct		s_back
 typedef struct		s_menu
 {
   t_bunny_pixelarray	*menu;
+  t_fire		*fire;
 }			t_menu;
 
 typedef	struct		s_data
@@ -87,6 +89,7 @@ typedef	struct		s_data
   int			kill;
   t_player		player;
   t_back		back;
+  t_menu		menu;
 }			t_data;
 
 void	scroll(t_bunny_picture *);
