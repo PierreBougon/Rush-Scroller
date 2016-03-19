@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:39:34 2016 bougon_p
-** Last update Sat Mar 19 22:44:39 2016 bougon_p
+** Last update Sat Mar 19 22:46:13 2016 bougon_p
 */
 
 #ifndef mega_h_
@@ -74,8 +74,15 @@ typedef struct		s_back
 
 typedef struct		s_state
 {
-
+  bool			menu;
+  bool			game;
+  bool			end;
 }			t_state;
+
+typedef struct		s_menu
+{
+  t_bunny_pixelarray	*pixelarray;
+}			t_menu;
 
 typedef	struct		s_data
 {
@@ -124,7 +131,9 @@ void	move_player(t_data *);
 void	rotate_player_left(t_player *);
 void	rotate_player_right(t_player *);
 void	refresh_player_pos(t_player *);
-void	check_player_movement(t_data *, t_bunny_keysym, t_bunny_event_state);
+void	check_player_movement(t_data *,
+			      t_bunny_keysym,
+			      t_bunny_event_state);
 
 /*
 ** OTHERS
