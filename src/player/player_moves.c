@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sat Mar 19 02:01:36 2016 bougon_p
-** Last update Sat Mar 19 18:48:17 2016 bougon_p
+** Last update Sat Mar 19 18:56:53 2016 bougon_p
 */
 
 #include "mega.h"
@@ -14,11 +14,13 @@ void	check_murder(t_data *data)
 {
   if ((data->player.stateright
        && data->back.pos_rab.x <= data->player.play_pos.x + HITBOX
-       && data->back.pos_rab.x >data->player.play_pos.x)
+       && data->back.pos_rab.x >data->player.play_pos.x
+       && data->player.isattack)
       || (!data->player.stateright
 	  && data->back.pos_rab.x >= data->player.play_pos.x - HITBOX
-	  && data->back.pos_rab.x < data->player.play_pos.x))
-    printf("\nYOU KILLED THE RABBIT\n");
+	  && data->back.pos_rab.x < data->player.play_pos.x
+&& data->player.isattack))
+    data->kill = 1;
 }
 
 void			anim_attck(t_data *data)
