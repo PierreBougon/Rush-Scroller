@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:39:34 2016 bougon_p
-** Last update Sun Mar 20 21:00:51 2016 benjamin duhieu
+** Last update Sun Mar 20 21:51:51 2016 benjamin duhieu
 */
 
 #ifndef mega_h_
@@ -203,9 +203,11 @@ void	rotate_picture(t_data *);
 /*
 ** OTHERS
 */
+
 void	delete_all_clipables(t_data *);
 int	init_var(t_data *);
 int	init_fire(t_data *);
+void	free_effects(t_data *);
 void	tekpixel(t_bunny_pixelarray *,
 		 t_bunny_position *, t_color *);
 int	plasma(t_data *);

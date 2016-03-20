@@ -5,7 +5,7 @@
 ## Login   <bougon_p@epitech.net>
 ## 
 ## Started on  Fri Mar 18 20:18:33 2016 bougon_p
-## Last update Sun Mar 20 21:00:13 2016 benjamin duhieu
+## Last update Sun Mar 20 21:52:01 2016 benjamin duhieu
 ##
 
 # USEFUL VARIABLES
@@ -37,6 +37,8 @@ PLASMA		=	src/plsm/
 
 MORT		=	src/mort/
 
+FREE		=	src/free/
+
 END		=	src/end/
 
 SRC		=	$(MAIN)main.c \
@@ -65,10 +67,10 @@ SRC		=	$(MAIN)main.c \
 			$(WAVE)new.c \
 			$(MORT)mort.c \
 			$(MORT)new_mort.c \
+			$(FREE)free_effects.c \
 			$(PLASMA)plasma.c \
 			$(PLASMA)init_plasma.c \
 			$(PLASMA)set_plasma.c \
-
 
 OBJS    	=	$(SRC:.c=.o)
 

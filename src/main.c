@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:25:37 2016 bougon_p
-** Last update Sun Mar 20 21:24:02 2016 benjamin duhieu
+** Last update Sun Mar 20 21:51:29 2016 benjamin duhieu
 */
 
 #include <string.h>
@@ -97,7 +97,9 @@ int		main()
   bunny_set_click_response(click_actions);
   bunny_loop(data.window, 60, &data);
   free_sampler(&data);
+  free_effects(&data);
   free (data.end.plsm.colorarray);
   bunny_stop(data.window);
+  /* memory_check = 1; */
   return (0);
 }
