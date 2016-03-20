@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sat Mar 19 02:01:36 2016 bougon_p
-** Last update Sat Mar 19 23:46:36 2016 benjamin duhieu
+** Last update Sun Mar 20 09:27:03 2016 benjamin duhieu
 */
 
 #include "mega.h"
@@ -52,7 +52,7 @@ void			anim_attck(t_data *data)
 
 void	idle_anim(t_data *data)
 {
-  if (data->player.tim_idle % 3 == 0 && data->player.wait % 40 < 38)
+  if (data->player.tim_idle % 3 == 0 && data->player.wait % 20 < 18)
     {
       data->player.play_pos.y -= 5;
       data->player.stay->clip_x_position = 0;
@@ -64,7 +64,7 @@ void	idle_anim(t_data *data)
       return ;
     }
   data->player.wait++;
-  if (data->player.wait % 6 == 0)
+  if (data->player.wait % 8 == 0)
     data->player.tim_idle++;
   data->player.play_pos.y -= 5;
   data->player.stay->clip_x_position = (data->player.tim_idle % 3) * 70;

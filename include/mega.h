@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:39:34 2016 bougon_p
-** Last update Sat Mar 19 23:25:27 2016 benjamin duhieu
+** Last update Sun Mar 20 09:27:43 2016 benjamin duhieu
 */
 
 #ifndef mega_h_
@@ -16,6 +16,7 @@
 # include <time.h>
 # include "lapin.h"
 # include "sampler.h"
+# include "fire.h"
 
 # define UNUSED __attribute__((__unused__))
 
@@ -83,6 +84,8 @@ typedef struct		s_state
 typedef struct		s_menu
 {
   t_bunny_pixelarray	*menu;
+  t_fire		*fire;
+  bool			start;
 }			t_menu;
 
 typedef	struct		s_data
@@ -98,6 +101,7 @@ typedef	struct		s_data
   t_player		player;
   t_back		back;
   t_state		state;
+  t_menu		menu;
 }			t_data;
 
 void	scroll(t_bunny_picture *);
@@ -112,10 +116,18 @@ void	sampler_keys(t_data *data,
 		     t_bunny_keysym keysym);
 
 /*
+** DISPLAY
+*/
+void	disp_game(t_data *);
+void	disp_menu(t_data *);
+void	disp_end(t_data *);
+
+/*
 ** BACKGROUND
 */
 void	draw_bg(t_data *);
 void	draw_sky(t_data *);
+
 /*
 ** Players functions
 */
@@ -142,5 +154,6 @@ void	check_player_movement(t_data *,
 ** OTHERS
 */
 void	delete_all_clipables(t_data *);
+int	init_var(t_data *);
 
 #endif /* !mega_h_  */
