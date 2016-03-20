@@ -5,7 +5,7 @@
 ## Login   <bougon_p@epitech.net>
 ## 
 ## Started on  Fri Mar 18 20:18:33 2016 bougon_p
-## Last update Sun Mar 20 23:14:23 2016 benjamin duhieu
+## Last update Sun Mar 20 23:35:46 2016 benjamin duhieu
 ##
 
 # USEFUL VARIABLES
@@ -93,7 +93,7 @@ NAME	=	MegaDemo
 
 IFLAG	=	-Iinclude/
 
-CFLAGS  =	-W -Wall -Wextra -g $(IFLAG)
+CFLAGS  =	-W -Wall -Wextra $(IFLAG)
 
 CC      =	gcc $(CFLAGS) #-D LAPIN_ALLOCATOR_DEACTIVATED
 
