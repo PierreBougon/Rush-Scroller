@@ -5,7 +5,7 @@ c** sampler.c for scroller in ~/RENDU/INFOGRAPHIE/gfx_scroller/sampler
 ** Login   <marc brout@epitech.net>
 **
 ** Started on  Fri Mar 18 22:44:57 2016 marc brout
-** Last update Sun Mar 20 22:33:01 2016 marc brout
+** Last update Sun Mar 20 23:31:47 2016 marc brout
 */
 
 #include <math.h>
@@ -22,7 +22,7 @@ void		change_music(t_sample **samples,
 {
   bunny_sound_stop(&samples[*curmusic]->music->sound);
   *curmusic = (*curmusic + i >= 0) ? (*curmusic + i) % NB_SAMPLES :
-    NB_SAMPLES - 1 ;
+    NB_SAMPLES - 1;
   *change = 1;
 }
 
