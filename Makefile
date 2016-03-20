@@ -5,7 +5,7 @@
 ## Login   <bougon_p@epitech.net>
 ## 
 ## Started on  Fri Mar 18 20:18:33 2016 bougon_p
-## Last update Sat Mar 19 22:37:07 2016 benjamin duhieu
+## Last update Sat Mar 19 23:52:14 2016 benjamin duhieu
 ##
 
 # USEFUL VARIABLES
@@ -27,12 +27,14 @@ PLAYER		=	src/player/
 
 SAMPLER		=	src/sampler/
 
+GAME		=	src/game/
+
 SRC		=	$(MAIN)main.c \
-			$(MAIN)background.c \
-			$(MAIN)delete.c \
-			$(MAIN)grass.c \
-			$(MAIN)check_pos.c \
-			$(MAIN)init_sprites.c \
+			$(GAME)background.c \
+			$(GAME)delete.c \
+			$(GAME)grass.c \
+			$(GAME)check_pos.c \
+			$(GAME)init_sprites.c \
 			$(PLAYER)player.c \
 			$(PLAYER)player_moves.c \
 			$(SAMPLER)sampler.c \

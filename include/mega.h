@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:39:34 2016 bougon_p
-** Last update Sat Mar 19 23:12:08 2016 benjamin duhieu
+** Last update Sat Mar 19 23:25:27 2016 benjamin duhieu
 */
 
 #ifndef mega_h_
@@ -89,6 +89,8 @@ typedef	struct		s_data
 {
   t_bunny_window	*window;
   t_bunny_pixelarray	*pixarray;
+  t_bunny_effect	*saber;
+  t_bunny_effect	*death;
   t_sample		*samples[NB_SAMPLES];
   int			curmusic;
   int			change;

@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sat Mar 19 00:06:52 2016 bougon_p
-** Last update Sat Mar 19 23:05:22 2016 benjamin duhieu
+** Last update Sat Mar 19 23:43:12 2016 benjamin duhieu
 */
 
 #include "mega.h"
@@ -42,6 +42,8 @@ void	next_init(t_data *data)
   data->back.pos_mount2.y = 40;
   data->back.pos_rab.y = 300;
   data->back.pos_rab.x = rand() % data->back.mount->clip_width;
+  bunny_sound_volume(&data->saber->sound, 40.0);
+  bunny_sound_volume(&data->death->sound, 80.0);
 }
 
 int	init_sprites(t_data *data)
@@ -58,6 +60,8 @@ int	init_sprites(t_data *data)
       !(data->back.grass = bunny_load_picture("img/grass.png")) ||
       !(data->back.grass2 = bunny_load_picture("img/grass.png")) ||
       !(data->player.attck = bunny_load_picture("img/attack.png")) ||
+      !(data->death = bunny_load_effect("files/sounds/dead.ogg")) ||
+      !(data->saber = bunny_load_effect("files/sounds/laser.ogg")) ||
       !(data->player.stay = bunny_load_picture("img/stay.png")))
     return (1);
   data->player.attck->scale.x = 1.03;

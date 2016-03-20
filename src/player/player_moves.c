@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sat Mar 19 02:01:36 2016 bougon_p
-** Last update Sat Mar 19 22:40:06 2016 bougon_p
+** Last update Sat Mar 19 23:46:36 2016 benjamin duhieu
 */
 
 #include "mega.h"
@@ -20,7 +20,12 @@ void	check_murder(t_data *data)
 	  && data->back.pos_rab.x >= data->player.play_pos.x - HITBOX
 	  && data->back.pos_rab.x < data->player.play_pos.x
 && data->player.isattack))
-    data->kill = 1;
+    {
+      data->kill = 1;
+      data->back.pos_rab.x =
+	rand() % data->back.mount->clip_width + data->back.back->clip_width;
+      bunny_sound_play(&data->death->sound);
+    }
 }
 
 void			anim_attck(t_data *data)
@@ -151,5 +156,6 @@ void	check_player_movement(t_data *data, t_bunny_keysym keysym,
     {
       data->player.isattack = true;
       data->player.ismoving = false;
+      bunny_sound_play(&data->saber->sound);
     }
 }
