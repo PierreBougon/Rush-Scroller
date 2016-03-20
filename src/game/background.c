@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sat Mar 19 03:27:05 2016 bougon_p
-** Last update Sun Mar 20 22:00:50 2016 marc brout
+** Last update Sun Mar 20 22:41:35 2016 marc brout
 */
 
 #include "mega.h"
@@ -77,7 +77,7 @@ void	rabbit(t_data *data)
   else
     {
       i++;
-      if (!(i % 3) && count < 3)
+      if (!(i % 5) && count < 3)
 	{
 	  bunny_blit(&data->window->buffer,
 		     data->back.rabbit, &data->back.pos_rab);

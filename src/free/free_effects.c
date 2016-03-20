@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 **
 ** Started on  Sun Mar 20 19:56:26 2016 marc brout
-** Last update Sun Mar 20 21:52:59 2016 benjamin duhieu
+** Last update Sun Mar 20 21:57:07 2016 benjamin duhieu
 */
 
 #include "mega.h"
@@ -35,4 +35,6 @@ void		free_effects(t_data *data)
   bunny_free(data->menu.rohan);
   bunny_free(data->menu.mort);
   bunny_free(data->menu.fire);
+  bunny_delete_sound(&data->saber->sound);
+  bunny_delete_sound(&data->death->sound);
 }

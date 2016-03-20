@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sat Mar 19 22:47:45 2016 bougon_p
-** Last update Sun Mar 20 22:06:28 2016 marc brout
+** Last update Sun Mar 20 22:40:41 2016 marc brout
 */
 
 #include "mega.h"
@@ -57,9 +57,11 @@ int	init_fire(t_data *data)
 
 int	init_plasma(t_data *data)
 {
-  if (!(data->end.plsm.pixarray = bunny_new_pixelarray(WIN_WIDTH, WIN_HEIGHT)))
+  if (!(data->end.plsm.pixarray =
+	bunny_new_pixelarray(WIN_WIDTH, WIN_HEIGHT)))
     return (1);
-  if ((data->end.plsm.colorarray = malloc(sizeof(t_color) * 128)) == NULL)
+  if ((data->end.plsm.colorarray =
+       malloc(sizeof(t_color) * 128)) == NULL)
     return (1);
   set_colorarray_plasma(data->end.plsm.colorarray);
   data->end.plsm.move = 10;
@@ -73,6 +75,7 @@ int	init_var(t_data *data)
   data->menu.scr = data->pixarray;
   data->menu.pos.x = data->menu.scr->clipable.clip_width;
   data->menu.pos.y = 75;
+  data->kill = 0;
   if (!(data->menu.txt =
 	char_to_list("abcdefghijklmnopqrstuvwxyz1234567890,.:'-<>!")))
     return (1);
