@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:39:34 2016 bougon_p
-** Last update Sun Mar 20 17:46:41 2016 benjamin duhieu
+** Last update Sun Mar 20 19:11:21 2016 benjamin duhieu
 */
 
 #ifndef mega_h_
@@ -20,6 +20,7 @@
 # include "text.h"
 # include "mort.h"
 # include "rohan.h"
+# include "plsm.h"
 
 # define UNUSED __attribute__((__unused__))
 
@@ -28,7 +29,11 @@
 # define LIMIT_RIGHT WIN_WIDTH / 2 + 150
 # define LIMIT_LEFT WIN_WIDTH / 2 - 150
 # define FLOOR 332
+
 # define HITBOX 100
+/*# define END_GAME 3000*/
+# define END_GAME 100
+
 
 # define SKY 0xFF705A4E
 # define GREY 0xFF252525
@@ -98,6 +103,12 @@ typedef struct		s_menu
   bool			start;
 }			t_menu;
 
+typedef	struct		s_end
+{
+  t_plsm		plsm;
+  t_color		starcol;
+}			t_end;
+
 typedef	struct		s_data
 {
   t_bunny_window	*window;
@@ -116,6 +127,7 @@ typedef	struct		s_data
   t_back		back;
   t_state		state;
   t_menu		menu;
+  t_end			end;
 }			t_data;
 
 void	scroll(t_bunny_picture *);
@@ -143,7 +155,7 @@ void	draw_bg(t_data *);
 void	draw_sky(t_data *);
 
 /*
-** Players functions
+** Player's functions
 */
 int	init_sprites(t_data *);
 int	init_player(t_data *);
@@ -163,6 +175,9 @@ void	refresh_player_pos(t_player *);
 void	check_player_movement(t_data *,
 			      t_bunny_keysym,
 			      t_bunny_event_state);
+void	check_murder(t_data *);
+void	check_end_game(t_data *);
+
 /*
 ** Disp text: tet.c
 */
@@ -190,6 +205,8 @@ void	rotate_picture(t_data *);
 void	delete_all_clipables(t_data *);
 int	init_var(t_data *);
 int	init_fire(t_data *);
-
+void	tekpixel(t_bunny_pixelarray *,
+		 t_bunny_position *, t_color *);
+int	plasma(t_data *);
 
 #endif /* !mega_h_  */
