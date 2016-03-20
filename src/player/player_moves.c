@@ -5,14 +5,15 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sat Mar 19 02:01:36 2016 bougon_p
-** Last update Sun Mar 20 13:55:20 2016 bougon_p
+** Last update Sun Mar 20 22:09:41 2016 marc brout
 */
 
 #include "mega.h"
 
 void	refresh_player_realpos(t_player *player)
 {
-  if (player->ismoving && player->stateright && player->real_pos.x < END_GAME)
+  if (player->ismoving && player->stateright &&
+      player->real_pos.x < END_GAME)
     player->real_pos.x += 1;
   if (player->ismoving && !player->stateright && player->real_pos.x > 0)
     player->real_pos.x -= 1;

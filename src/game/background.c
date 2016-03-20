@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sat Mar 19 03:27:05 2016 bougon_p
-** Last update Sun Mar 20 22:15:08 2016 benjamin duhieu
+** Last update Sun Mar 20 22:41:35 2016 marc brout
 */
 
 #include "mega.h"
@@ -69,7 +69,8 @@ void	rabbit(t_data *data)
 
   if (!data->kill)
     {
-      bunny_blit(&data->window->buffer, data->back.rabbit, &data->back.pos_rab);
+      bunny_blit(&data->window->buffer,
+		 data->back.rabbit, &data->back.pos_rab);
       i = 0;
       count = 0;
     }
@@ -78,7 +79,8 @@ void	rabbit(t_data *data)
       i++;
       if (!(i % 5) && count < 3)
 	{
-	  bunny_blit(&data->window->buffer, data->back.rabbit, &data->back.pos_rab);
+	  bunny_blit(&data->window->buffer,
+		     data->back.rabbit, &data->back.pos_rab);
 	  count++;
 	}
     }
@@ -104,6 +106,7 @@ void	draw_bg(t_data *data)
   bunny_blit(&data->window->buffer, data->back.mount,
   	     &data->back.pos_mount2);
   rabbit(data);
-  bunny_blit(&data->window->buffer, data->back.tree, &data->back.pos_tree);
+  bunny_blit(&data->window->buffer, data->back.tree,
+	     &data->back.pos_tree);
   draw_grass(data);
 }

@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 **
 ** Started on  Wed Jan  6 23:41:59 2016 marc brout
-** Last update Sun Mar 20 10:35:51 2016 marc brout
+** Last update Sun Mar 20 22:07:36 2016 marc brout
 */
 
 #include "mort.h"
@@ -72,12 +72,3 @@ void		aff_mort(t_mort *mort, char *img)
   bunny_delete_clipable(&mort->pix->clipable);
   bunny_stop(mort->win);
 }
-
-/* int		main(int ac, char **av) */
-/* { */
-/*   t_mort	mort; */
-
-/*   if (ac > 1) */
-/*     aff_mort(&mort, av[1]); */
-/*   return (0); */
-/* } */

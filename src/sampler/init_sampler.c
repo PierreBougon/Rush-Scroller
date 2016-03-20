@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 **
 ** Started on  Sat Mar 19 18:09:47 2016 marc brout
-** Last update Sun Mar 20 09:53:43 2016 marc brout
+** Last update Sun Mar 20 22:25:30 2016 marc brout
 */
 
 #include "sampler.h"
@@ -14,7 +14,8 @@
 int	init_sampler(t_data *data)
 {
   if (!(data->samples[0] = load_bsf(BSF_1, SAMPLE_FOLD)) ||
-      !(data->samples[1] = load_bsf(BSF_2, SAMPLE_FOLD)))
+      !(data->samples[1] = load_bsf(BSF_2, SAMPLE_FOLD)) ||
+      !(data->samples[2] = load_bsf(BSF_3, SAMPLE_FOLD)))
     return (1);
   data->curmusic = 0;
   data->change = 0;

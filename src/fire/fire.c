@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 **
 ** Started on  Fri Dec  4 21:01:01 2015 marc brout
-** Last update Sat Mar 19 23:03:36 2016 marc brout
+** Last update Sun Mar 20 21:58:10 2016 marc brout
 */
 
 #include "fire.h"
@@ -69,7 +69,10 @@ void		rand_bottom(t_fire *fire)
     }
 }
 
-void		color_next_pix(t_color *pal, int col, int *deb, int *fin)
+void		color_next_pix(t_color *pal,
+			       int col,
+			       int *deb,
+			       int *fin)
 {
   while	(*deb < *fin)
     {
@@ -81,17 +84,3 @@ void		color_next_pix(t_color *pal, int col, int *deb, int *fin)
       *deb += 1;
     }
 }
-
-/* int			main() */
-/* { */
-/*   t_fire		fire; */
-/*   t_feu			tfeu; */
-
-/*   fire.feu = &tfeu; */
-/*   set_palette(&fire); */
-/*   if (init_struct(fire.feu)) */
-/*     return (1); */
-/*   my_fire_aff(&fire); */
-/*   free_fire(fire.feu->tab); */
-/*   return (0); */
-/* } */
