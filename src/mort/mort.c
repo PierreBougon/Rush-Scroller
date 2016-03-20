@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 **
 ** Started on  Wed Jan  6 23:41:59 2016 marc brout
-** Last update Sun Mar 20 22:07:36 2016 marc brout
+** Last update Sun Mar 20 23:27:00 2016 marc brout
 */
 
 #include "mort.h"
@@ -51,7 +51,7 @@ t_bunny_response	my_key_mort(t_bunny_event_state state,
   return (GO_ON);
 }
 
-void		aff_mort(t_mort *mort, char *img)
+ void		aff_mort(t_mort *mort, char *img)
 {
   t_bunny_key	keyesc;
 

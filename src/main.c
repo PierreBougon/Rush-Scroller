@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:25:37 2016 bougon_p
-** Last update Sun Mar 20 22:55:35 2016 marc brout
+** Last update Sun Mar 20 23:26:10 2016 marc brout
 */
 
 #include <string.h>
@@ -96,8 +96,7 @@ int		main()
   delete_all_clipables(&data);
   free_sampler(&data);
   free_effects(&data);
-  free (data.end.plsm.colorarray);
+  bunny_free(data.end.plsm.colorarray);
   bunny_stop(data.window);
-  /* memory_check = 1; */
   return (0);
 }
