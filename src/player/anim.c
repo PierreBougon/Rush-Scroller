@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sun Mar 20 11:58:02 2016 bougon_p
-** Last update Sun Mar 20 13:54:03 2016 bougon_p
+** Last update Sun Mar 20 22:08:31 2016 marc brout
 */
 
 #include "mega.h"
@@ -17,7 +17,8 @@ void			anim_attck(t_data *data)
   data->player.wait++;
   if (data->player.wait % 3 == 0)
     data->player.timatt++;
-  data->player.attck->clip_x_position = (data->player.timatt % 12) * 130;
+  data->player.attck->clip_x_position =
+    (data->player.timatt % 12) * 130;
   data->player.attck->clip_width = 130;
   pos.x = data->player.play_pos.x - 15 + data->player.attck_pos.x;
   pos.y = data->player.play_pos.y - 39;
@@ -71,7 +72,8 @@ void	move_player(t_data *data)
       data->player.wait++;
       if (data->player.wait % 5 == 0)
         data->player.tim++;
-      data->player.sprite->clip_x_position = (data->player.tim % 10) * 70;
+      data->player.sprite->clip_x_position =
+	(data->player.tim % 10) * 70;
       data->player.sprite->clip_width = 70;
       bunny_blit(&data->window->buffer,
                  data->player.sprite,

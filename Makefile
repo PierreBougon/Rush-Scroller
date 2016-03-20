@@ -5,7 +5,7 @@
 ## Login   <bougon_p@epitech.net>
 ## 
 ## Started on  Fri Mar 18 20:18:33 2016 bougon_p
-## Last update Sun Mar 20 22:25:00 2016 bougon_p
+## Last update Sun Mar 20 22:43:33 2016 marc brout
 ##
 
 # USEFUL VARIABLES
@@ -64,7 +64,6 @@ SRC		=	$(MAIN)main.c \
 			$(FIRE)aff_fire.c \
 			$(FIRE)fire.c \
 			$(FIRE)fire_loop.c \
-			$(WAVE)rohan.c \
 			$(WAVE)new.c \
 			$(MORT)mort.c \
 			$(MORT)new_mort.c \

@@ -5,7 +5,7 @@
 ** Login   <duhieu_b@epitech.net>
 **
 ** Started on  Sun Mar 20 15:56:09 2016 benjamin duhieu
-** Last update Sun Mar 20 18:08:19 2016 benjamin duhieu
+** Last update Sun Mar 20 22:06:56 2016 marc brout
 */
 
 #include "mega.h"
@@ -14,7 +14,8 @@ void	rotate_picture(t_data *data)
 {
   if (data->scale == 0)
     data->tmpx = data->back.pos_rab.x;
-  data->back.rabbit->rotation = (int)(data->back.rabbit->rotation + 1) % 360;
+  data->back.rabbit->rotation =
+    (int)(data->back.rabbit->rotation + 1) % 360;
 }
 
 void	no_rotate_picture(t_data *data)

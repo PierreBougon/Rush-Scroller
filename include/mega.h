@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:39:34 2016 bougon_p
-** Last update Sun Mar 20 22:27:10 2016 bougon_p
+** Last update Sun Mar 20 22:28:43 2016 benjamin duhieu
 */
 
 #ifndef mega_h_
