@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:25:37 2016 bougon_p
-** Last update Sun Mar 20 19:09:13 2016 benjamin duhieu
+** Last update Sun Mar 20 21:24:02 2016 benjamin duhieu
 */
 
 #include <string.h>
@@ -66,7 +66,12 @@ t_bunny_response	mainloop(void *_data)
   if (data->state.menu)
     disp_menu(data);
   else if (data->state.game)
-    disp_game(data);
+    {
+      if (!data->state.fondu)
+	fondu(data);
+      else
+	disp_game(data);
+    }
   else if (data->state.end)
     disp_end(data);
   bunny_display(data->window);

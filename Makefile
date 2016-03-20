@@ -5,7 +5,7 @@
 ## Login   <bougon_p@epitech.net>
 ## 
 ## Started on  Fri Mar 18 20:18:33 2016 bougon_p
-## Last update Sun Mar 20 19:10:48 2016 benjamin duhieu
+## Last update Sun Mar 20 21:00:13 2016 benjamin duhieu
 ##
 
 # USEFUL VARIABLES
@@ -40,9 +40,10 @@ MORT		=	src/mort/
 END		=	src/end/
 
 SRC		=	$(MAIN)main.c \
-			$(MAIN)text.c \
-			$(MAIN)scale.c \
-			$(MAIN)tekpixel.c \
+			$(GAME)text.c \
+			$(GAME)scale.c \
+			$(GAME)tekpixel.c \
+			$(GAME)fondu.c \
 			$(GAME)init_var.c \
 			$(GAME)display.c \
 			$(GAME)background.c \

@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:39:34 2016 bougon_p
-** Last update Sun Mar 20 19:11:21 2016 benjamin duhieu
+** Last update Sun Mar 20 21:00:51 2016 benjamin duhieu
 */
 
 #ifndef mega_h_
@@ -84,6 +84,7 @@ typedef struct		s_back
 
 typedef struct		s_state
 {
+  bool			fondu;
   bool			menu;
   bool			game;
   bool			end;
@@ -177,7 +178,7 @@ void	check_player_movement(t_data *,
 			      t_bunny_event_state);
 void	check_murder(t_data *);
 void	check_end_game(t_data *);
-
+void	fondu(t_data *);
 /*
 ** Disp text: tet.c
 */
