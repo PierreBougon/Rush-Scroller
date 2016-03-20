@@ -1,51 +1,51 @@
 /*
-** check_pos.c for check_pos in /home/duhieu_b/infographie/gfx_scroller/src
+** check_pos.c for check_pos in /infographie/gfx_scroller/src
 **
 ** Made by benjamin duhieu
 ** Login   <duhieu_b@epitech.net>
 **
 ** Started on  Sat Mar 19 16:26:36 2016 benjamin duhieu
-** Last update Sat Mar 19 23:45:49 2016 benjamin duhieu
+** Last update Sun Mar 20 22:03:52 2016 marc brout
 */
 
 #include "mega.h"
 
-void	check_on_my_right(t_data *data)
+void	check_on_my_right(t_data *d)
 {
-  if (data->back.pos_rab.x <= -data->back.rabbit->clip_width)
+  if (d->back.pos_rab.x <= -d->back.rabbit->clip_width)
     {
-      data->back.pos_rab.x =
-	rand() % data->back.mount->clip_width + data->back.back->clip_width;
-      data->kill = 0;
+      d->back.pos_rab.x =
+	rand() % d->back.mount->clip_width + d->back.back->clip_width;
+      d->kill = 0;
     }
-  if (data->back.pos_tree.x <= -data->back.tree->clip_width)
-    data->back.pos_tree.x =
-      rand() % data->back.back->clip_width + data->back.back->clip_width;
-  if (data->back.pos_tree2.x <= -(data->back.tree2->clip_width * 3))
-    data->back.pos_tree2.x =
-      rand() % data->back.back->clip_width + data->back.back->clip_width;
-  if (data->back.pos_fence.x <= -data->back.fence->clip_width)
-    data->back.pos_fence.x =
-      rand() % data->back.mount->clip_width + data->back.back->clip_width;
-  if (data->back.pos_mount.x <= -data->back.mount->clip_width)
-    data->back.pos_mount.x = data->back.back->clip_width;
-  if (data->back.pos_mount2.x <= -data->back.mount->clip_width)
-    data->back.pos_mount2.x = data->back.back->clip_width;
+  if (d->back.pos_tree.x <= -d->back.tree->clip_width)
+    d->back.pos_tree.x =
+      rand() % d->back.back->clip_width + d->back.back->clip_width;
+  if (d->back.pos_tree2.x <= -(d->back.tree2->clip_width * 3))
+    d->back.pos_tree2.x =
+      rand() % d->back.back->clip_width + d->back.back->clip_width;
+  if (d->back.pos_fence.x <= -d->back.fence->clip_width)
+    d->back.pos_fence.x =
+      rand() % d->back.mount->clip_width + d->back.back->clip_width;
+  if (d->back.pos_mount.x <= -d->back.mount->clip_width)
+    d->back.pos_mount.x = d->back.back->clip_width;
+  if (d->back.pos_mount2.x <= -d->back.mount->clip_width)
+    d->back.pos_mount2.x = d->back.back->clip_width;
 }
 
-void	check_on_my_left(t_data *data)
+void	check_on_my_left(t_data *d)
 {
-  if (data->back.pos_fence.x <= -data->back.fence->clip_width)
-    data->back.pos_fence.x =
-      rand() % data->back.mount->clip_width + data->back.back->clip_width;
-  if (data->back.pos_tree.x <= -data->back.tree->clip_width)
-    data->back.pos_tree.x =
-      rand() % data->back.back->clip_width + data->back.back->clip_width;
-  if (data->back.pos_tree2.x <= -(data->back.tree2->clip_width * 3))
-    data->back.pos_tree2.x =
-      rand() % data->back.back->clip_width + data->back.back->clip_width;
-  if (data->back.pos_mount.x >= data->back.mount->clip_width)
-    data->back.pos_mount.x = -data->back.mount->clip_width;
-  if (data->back.pos_mount2.x >= data->back.mount->clip_width)
-    data->back.pos_mount2.x = -data->back.mount->clip_width;
+  if (d->back.pos_fence.x <= -d->back.fence->clip_width)
+    d->back.pos_fence.x =
+      rand() % d->back.mount->clip_width + d->back.back->clip_width;
+  if (d->back.pos_tree.x <= -d->back.tree->clip_width)
+    d->back.pos_tree.x =
+      rand() % d->back.back->clip_width + d->back.back->clip_width;
+  if (d->back.pos_tree2.x <= -(d->back.tree2->clip_width * 3))
+    d->back.pos_tree2.x =
+      rand() % d->back.back->clip_width + d->back.back->clip_width;
+  if (d->back.pos_mount.x >= d->back.mount->clip_width)
+    d->back.pos_mount.x = -d->back.mount->clip_width;
+  if (d->back.pos_mount2.x >= d->back.mount->clip_width)
+    d->back.pos_mount2.x = -d->back.mount->clip_width;
 }

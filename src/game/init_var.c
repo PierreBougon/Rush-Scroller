@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sat Mar 19 22:47:45 2016 bougon_p
-** Last update Sun Mar 20 20:38:59 2016 benjamin duhieu
+** Last update Sun Mar 20 22:06:28 2016 marc brout
 */
 
 #include "mega.h"
@@ -18,7 +18,6 @@ int	init_rohan(t_data *data)
       !(data->menu.rohan->quit =
 	bunny_load_pixelarray("./img/quit_butt.png")))
     return (1);
-  /* data->menu.rohan->decal = 0; */
   data->menu.rohan->turn = 0;
   data->menu.rohan->temp = data->pixarray;
   data->menu.rohan->win = data->window;

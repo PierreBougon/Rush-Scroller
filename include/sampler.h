@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 **
 ** Started on  Fri Mar 18 22:45:25 2016 marc brout
-** Last update Sun Mar 20 10:06:32 2016 marc brout
+** Last update Sun Mar 20 22:25:09 2016 marc brout
 */
 
 #ifndef SAMPLER_H_
@@ -19,8 +19,9 @@
 
 # define SAMPLE_FOLD "files/sounds"
 # define BSF_1 "files/sounds/aerodynamicLOL.bsf"
-# define BSF_2 "files/sounds/darude.bsf"
-# define NB_SAMPLES 2
+# define BSF_2 "files/sounds/starwars.bsf"
+# define BSF_3 "files/sounds/mario.bsf"
+# define NB_SAMPLES 3
 # define RAD(x) (((x) * M_PI) / 180)
 
 typedef	struct		s_sample

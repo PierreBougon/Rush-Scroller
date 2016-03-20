@@ -1,11 +1,11 @@
 /*
-** sampler.c for scroller in ~/RENDU/INFOGRAPHIE/gfx_scroller/sampler
+c** sampler.c for scroller in ~/RENDU/INFOGRAPHIE/gfx_scroller/sampler
 **
 ** Made by marc brout
 ** Login   <marc brout@epitech.net>
 **
 ** Started on  Fri Mar 18 22:44:57 2016 marc brout
-** Last update Sat Mar 19 22:22:12 2016 bougon_p
+** Last update Sun Mar 20 22:33:01 2016 marc brout
 */
 
 #include <math.h>
@@ -37,17 +37,17 @@ void		sampler(t_sample *sample, int *change)
     ang = 10;
   if (*change && !(j = 0) && (i = -1))
     *change = 0;
-  if (((i / 60) ) >= sample->duration[j] / 1000)
+  i = (int)(i + 1) % 150000;
+  if (((i / 60)) >= sample->duration[j] / 1000)
     {
-      j = ((j + 1) % sample->lendur) % sample->lenpit;
       i = 0;
+      j = ((j + 1) % sample->lendur) % sample->lenpit;
       if (i != -1)
-	bunny_sound_stop(&sample->music->sound);
+      	bunny_sound_stop(&sample->music->sound);
       bunny_sound_pitch(&sample->music->sound,
-			sample->pitch[j] / (441 * sin(RAD(ang))));
+			sample->pitch[j] / (440 * sin(RAD(ang))));
       bunny_sound_play(&sample->music->sound);
     }
-  i = (int)(i + 1) % 150000;
 }
 
 t_sample	*load_bsf(const char *file, const char *path)
