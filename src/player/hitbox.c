@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sun Mar 20 12:12:20 2016 bougon_p
-** Last update Sun Mar 20 16:12:17 2016 bougon_p
+** Last update Sun Mar 20 19:34:55 2016 bougon_p
 */
 
 #include "mega.h"
@@ -16,7 +16,6 @@ void	check_end_game(t_data *data)
     {
       data->state.game = false;
       data->state.end = true;
-      /* delete_all_clipables(data); */
       /* if (!(data->end.starfield = */
       /* 	    bunny_new_pixelarray(WIN_WIDTH, WIN_HEIGHT)) || */
       /* 	  !(data->end.bck = */

@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:25:37 2016 bougon_p
-** Last update Sun Mar 20 18:15:47 2016 bougon_p
+** Last update Sun Mar 20 19:36:50 2016 bougon_p
 */
 
 #include <string.h>
@@ -17,8 +17,13 @@ t_bunny_response	button_key(t_bunny_event_state state,
   t_data		*data;
 
   data = _data;
-  if (keysym == BKS_ESCAPE && state == GO_DOWN)
+  if (keysym == BKS_A)
     return (EXIT_ON_SUCCESS);
+  if (keysym == BKS_ESCAPE && state == GO_DOWN)
+    {
+      data->state.menu = true;
+      data->state.game = false;
+    }
   if (data->state.game && state == GO_DOWN)
     check_player_movement(data, keysym, state);
   if ((keysym == BKS_LEFT || keysym == BKS_RIGHT)
@@ -79,6 +84,7 @@ int		main()
   bunny_set_key_response(button_key);
   bunny_set_click_response(click_actions);
   bunny_loop(data.window, 60, &data);
+  delete_all_clipables(&data);
   free_sampler(&data);
   free (data.end.plsm.colorarray);
   bunny_stop(data.window);
