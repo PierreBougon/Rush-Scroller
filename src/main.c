@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:25:37 2016 bougon_p
-** Last update Sun Mar 20 21:51:29 2016 benjamin duhieu
+** Last update Sun Mar 20 22:25:53 2016 bougon_p
 */
 
 #include <string.h>
@@ -17,19 +17,11 @@ t_bunny_response	button_key(t_bunny_event_state state,
   t_data		*data;
 
   data = _data;
-  if (keysym == BKS_ESCAPE && state == GO_DOWN)
-    return (EXIT_ON_SUCCESS);
   if (data->state.game && state == GO_DOWN)
     check_player_movement(data, keysym, state);
   if ((keysym == BKS_LEFT || keysym == BKS_RIGHT)
       && state == GO_UP)
     data->player.ismoving = false;
-  if (data->state.menu && data->menu.start &&
-      keysym == BKS_RETURN && state == GO_DOWN)
-    {
-      data->state.menu = false;
-      data->state.game = true;
-    }
   if (keysym == BKS_Z && state == GO_DOWN)
     {
       rotate_picture(data);
@@ -42,7 +34,11 @@ t_bunny_response	button_key(t_bunny_event_state state,
       data->scale = 0;
     }
   if (state == GO_DOWN)
-    sampler_keys(data, keysym);
+    {
+      sampler_keys(data, keysym);
+      if (check_menu(data, keysym) == 1)
+	return (EXIT_ON_SUCCESS);
+    }
   return (GO_ON);
 }
 
@@ -96,6 +92,7 @@ int		main()
   bunny_set_key_response(button_key);
   bunny_set_click_response(click_actions);
   bunny_loop(data.window, 60, &data);
+  delete_all_clipables(&data);
   free_sampler(&data);
   free_effects(&data);
   free (data.end.plsm.colorarray);

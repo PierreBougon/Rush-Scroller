@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sat Mar 19 23:13:48 2016 bougon_p
-** Last update Sun Mar 20 20:10:05 2016 benjamin duhieu
+** Last update Sun Mar 20 22:30:46 2016 benjamin duhieu
 */
 
 #include <string.h>
@@ -65,8 +65,8 @@ void	rohan(t_data *data, t_rohan *rohan)
     }
   else
     {
-      copy(data->menu.scr, rohan->quit, rohan, &rohan->pos_play);
-      copy_normal(rohan->temp, rohan->quit, &rohan->pos_quit);
+      copy(data->menu.scr, rohan->quit, rohan, &rohan->pos_quit);
+      copy_normal(rohan->temp, rohan->play, &rohan->pos_play);
     }
   rohan->turn += 1;
   bunny_blit(&rohan->win->buffer, &rohan->temp->clipable, NULL);

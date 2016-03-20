@@ -5,7 +5,7 @@
 ## Login   <bougon_p@epitech.net>
 ## 
 ## Started on  Fri Mar 18 20:18:33 2016 bougon_p
-## Last update Sun Mar 20 21:52:01 2016 benjamin duhieu
+## Last update Sun Mar 20 22:25:00 2016 bougon_p
 ##
 
 # USEFUL VARIABLES
@@ -43,6 +43,7 @@ END		=	src/end/
 
 SRC		=	$(MAIN)main.c \
 			$(GAME)text.c \
+			$(GAME)check_menu.c \
 			$(GAME)scale.c \
 			$(GAME)tekpixel.c \
 			$(GAME)fondu.c \

@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:39:34 2016 bougon_p
-** Last update Sun Mar 20 22:05:11 2016 benjamin duhieu
+** Last update Sun Mar 20 22:28:43 2016 benjamin duhieu
 */
 
 #ifndef mega_h_
@@ -30,10 +30,8 @@
 # define LIMIT_LEFT WIN_WIDTH / 2 - 150
 # define FLOOR 332
 
-# define HITBOX 100
+# define HITBOX 110
 # define END_GAME 3000
-/* # define END_GAME 100 */
-
 
 # define SKY 0xFF705A4E
 # define GREY 0xFF252525
@@ -211,5 +209,6 @@ void	free_effects(t_data *);
 void	tekpixel(t_bunny_pixelarray *,
 		 t_bunny_position *, t_color *);
 int	plasma(t_data *);
+int	check_menu(t_data *, t_bunny_keysym);
 
 #endif /* !mega_h_  */
