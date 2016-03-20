@@ -5,52 +5,12 @@
 ** Login   <duhieu_b@epitech.net>
 **
 ** Started on  Sun Mar 20 10:03:58 2016 benjamin duhieu
-<<<<<<< HEAD
-** Last update Sun Mar 20 23:28:02 2016 bougon_p
-=======
-** Last update Sun Mar 20 23:14:05 2016 benjamin duhieu
->>>>>>> ab572c8335c99da343b72080b6a814e0ad5314e4
+** Last update Sun Mar 20 23:37:53 2016 bougon_p
 */
 
 #include "mega.h"
 #include "text.h"
 
-<<<<<<< HEAD
-void		fill_list(t_text *txt, char c, int i)
-{
-  txt->chr = c;
-  txt->col = i % 9;
-  txt->row = i / 9;
-  txt->next = NULL;
-}
-
-t_text		*char_to_list(char *txt)
-{
-  t_text	*elem;
-  t_text	*text;
-  int		i;
-
-  if (!(text = bunny_malloc(sizeof(t_text))))
-    return (NULL);
-  text->next = NULL;
-  elem = text;
-  i = -1;
-  while (txt[++i])
-    {
-      if (i < 26)
-	fill_list(elem, txt[i], i);
-      else
-	fill_list(elem, txt[i], i + 1);
-      if (!(elem->next = bunny_malloc(sizeof(t_text))))
-	return (NULL);
-      elem = elem->next;
-    }
-  elem->next = NULL;
-  return (text);
-}
-
-=======
->>>>>>> ab572c8335c99da343b72080b6a814e0ad5314e4
 t_text		*chk_chr(t_text *txt, char c)
 {
   t_text	*elem;
