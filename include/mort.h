@@ -5,13 +5,25 @@
 ** Login   <brout_m@epitech.net>
 **
 ** Started on  Wed Jan  6 23:43:10 2016 marc brout
-** Last update Sat Mar 19 23:45:42 2016 marc brout
+** Last update Sun Mar 20 12:12:32 2016 marc brout
 */
 
 #ifndef MORT_H_
 # define MORT_H_
 
 # include "lapin.h"
+# define WIDTH 640
+# define HEIGHT 480
+
+typedef struct		s_decrem
+{
+  int			pos;
+  int			pos2;
+  int			x;
+  int			y;
+  t_color		*pixels;
+  t_color		*imgpixels;
+}			t_decrem;
 
 typedef struct		s_mort
 {

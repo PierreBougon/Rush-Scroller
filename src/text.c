@@ -5,7 +5,7 @@
 ** Login   <duhieu_b@epitech.net>
 **
 ** Started on  Sun Mar 20 10:03:58 2016 benjamin duhieu
-** Last update Sun Mar 20 12:53:50 2016 benjamin duhieu
+** Last update Sun Mar 20 14:02:12 2016 benjamin duhieu
 */
 
 #include "mega.h"
@@ -66,8 +66,8 @@ void		put_on_screen(t_menu *text, t_text *tmp, int i, int j)
 
   img = (t_color *)text->png->pixels;
   pixel = (t_color *)text->scr->pixels;
-  wid = (j + (2 * tmp->col) + (32 * tmp->col));
-  hei = (i + (2 * tmp->row) + (32 * tmp->row));
+  wid = (j + (2 * tmp->col) + (32 * tmp->col)) + 1;
+  hei = (i + (2 * tmp->row) + (32 * tmp->row)) + 1;
   pix = text->pos.x + j + text->count * 34;
   if (pix < text->scr->clipable.clip_width && pix >= 0)
     {
@@ -93,7 +93,7 @@ void		disalpha(char *str)
       str[i] = str[i] + 32;
 }
 
-void		put_space(t_menu *text)
+void		put_space()
 {
   int		i;
   int		j;
@@ -117,7 +117,7 @@ void		disp_text(t_text *txt, t_menu *text, char *str)
   while (str[++text->count])
     {
       if (!(tmp = chk_chr(txt, str[text->count])))
-	put_space(text);
+	put_space();
       else
 	{
 	  i = -1;

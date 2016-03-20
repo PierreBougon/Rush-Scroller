@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:25:37 2016 bougon_p
-** Last update Sun Mar 20 12:20:49 2016 benjamin duhieu
+** Last update Sun Mar 20 14:22:49 2016 benjamin duhieu
 */
 
 #include <string.h>
@@ -64,10 +64,10 @@ int		main()
 
   srand(time(NULL));
   bunny_set_maximum_ram(20000000);
-  data.str = strdup("It's a test");
-  if (!(data.window = bunny_start(WIN_WIDTH, WIN_HEIGHT, 0, "MEGAMAN")))
-    return (1);
-  if (!(data.pixarray = bunny_new_pixelarray(WIN_WIDTH, WIN_HEIGHT)))
+  data.str = strdup(PRESENTATION);
+  data.letters = strlen(data.str) * 34;
+  if (!(data.window = bunny_start(WIN_WIDTH, WIN_HEIGHT, 0, "MEGAMAN")) ||
+      !(data.pixarray = bunny_new_pixelarray(WIN_WIDTH, WIN_HEIGHT)))
     return (1);
   if (init_var(&data) == 1)
     return (1);
