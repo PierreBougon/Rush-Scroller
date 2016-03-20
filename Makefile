@@ -5,7 +5,7 @@
 ## Login   <bougon_p@epitech.net>
 ## 
 ## Started on  Fri Mar 18 20:18:33 2016 bougon_p
-## Last update Sun Mar 20 14:38:44 2016 bougon_p
+## Last update Sun Mar 20 18:19:38 2016 bougon_p
 ##
 
 # USEFUL VARIABLES
@@ -33,10 +33,15 @@ FIRE		=	src/fire/
 
 WAVE		=	src/wave/
 
+PLASMA		=	src/plsm/
+
 MORT		=	src/mort/
+
+END		=	src/end/
 
 SRC		=	$(MAIN)main.c \
 			$(MAIN)text.c \
+			$(MAIN)tekpixel.c \
 			$(GAME)init_var.c \
 			$(GAME)display.c \
 			$(GAME)background.c \
@@ -57,7 +62,11 @@ SRC		=	$(MAIN)main.c \
 			$(WAVE)rohan.c \
 			$(WAVE)new.c \
 			$(MORT)mort.c \
-			$(MORT)new_mort.c
+			$(MORT)new_mort.c \
+			$(PLASMA)plasma.c \
+			$(PLASMA)init_plasma.c \
+			$(PLASMA)set_plasma.c \
+
 
 OBJS    	=	$(SRC:.c=.o)
 

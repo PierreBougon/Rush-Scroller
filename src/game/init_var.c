@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sat Mar 19 22:47:45 2016 bougon_p
-** Last update Sun Mar 20 13:53:56 2016 benjamin duhieu
+** Last update Sun Mar 20 18:38:55 2016 bougon_p
 */
 
 #include "mega.h"
@@ -50,6 +50,19 @@ int	init_fire(t_data *data)
   return (0);
 }
 
+int	init_plasma(t_data *data)
+{
+  if (!(data->end.plsm.pixarray = bunny_new_pixelarray(WIN_WIDTH, WIN_HEIGHT)))
+    return (1);
+  if ((data->end.plsm.colorarray = malloc(sizeof(t_color) * 128)) == NULL)
+    return (1);
+  set_colorarray_plasma(data->end.plsm.colorarray);
+  data->end.plsm.move = 10;
+  data->end.plsm.modif = 5;
+  data->end.plsm.zoom = 5;
+  return (0);
+}
+
 int	init_var(t_data *data)
 {
   data->menu.scr = data->pixarray;
@@ -66,5 +79,8 @@ int	init_var(t_data *data)
       init_sampler(data) || init_fire(data) || init_mort(data) ||
       init_rohan(data))
     return (1);
+  data->end.starcol.full = WHITE;
+  if (init_plasma(data) == 1)
+    return (1);;
   return (0);
 }

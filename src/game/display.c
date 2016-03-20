@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sat Mar 19 23:13:48 2016 bougon_p
-** Last update Sun Mar 20 14:38:23 2016 bougon_p
+** Last update Sun Mar 20 18:31:46 2016 bougon_p
 */
 
 #include <string.h>
@@ -75,8 +75,7 @@ void	disp_menu(t_data *data)
   bunny_blit(&data->window->buffer, &data->menu.scr->clipable, NULL);
 }
 
-void	disp_end(UNUSED t_data *data)
+void	disp_end(t_data *data)
 {
-  bunny_fill(&data->back.back->buffer, 0xFF232323);
-  bunny_blit(&data->window->buffer, data->back.back, NULL);
+  plasma(data);
 }
