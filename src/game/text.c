@@ -5,7 +5,7 @@
 ** Login   <duhieu_b@epitech.net>
 **
 ** Started on  Sun Mar 20 10:03:58 2016 benjamin duhieu
-** Last update Sun Mar 20 23:01:24 2016 benjamin duhieu
+** Last update Sun Mar 20 23:14:05 2016 benjamin duhieu
 */
 
 #include "mega.h"
@@ -16,10 +16,11 @@ t_text		*chk_chr(t_text *txt, char c)
   t_text	*elem;
 
   elem = txt;
-  while (elem->next != NULL && elem->chr != c)
+  while (elem->next->next != NULL && elem->chr != c)
     elem = elem->next;
-  if (elem->next == NULL && elem->chr != c)
-    return (NULL);
+  if (elem->next->next == NULL)
+    if (elem->chr != c)
+      return (NULL);
   return (elem);
 }
 

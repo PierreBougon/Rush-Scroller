@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:25:37 2016 bougon_p
-** Last update Sun Mar 20 22:41:19 2016 benjamin duhieu
+** Last update Sun Mar 20 22:55:35 2016 marc brout
 */
 
 #include <string.h>
@@ -79,11 +79,12 @@ int		main()
   t_data	data;
 
   srand(time(NULL));
-  bunny_set_maximum_ram(20000000);
+  bunny_set_maximum_ram(30000000);
   data.str = strdup(PRESENTATION);
   data.letters = strlen(data.str) * 34;
   data.scale = 0.0;
-  if (!(data.window = bunny_start(WIN_WIDTH, WIN_HEIGHT, 0, "MEGAMAN")) ||
+  if (!(data.window = bunny_start(WIN_WIDTH, WIN_HEIGHT, 0, "MEGAMAN"))
+      ||
       !(data.pixarray = bunny_new_pixelarray(WIN_WIDTH, WIN_HEIGHT)))
     return (1);
   if (init_var(&data) == 1)
