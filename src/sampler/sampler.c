@@ -1,11 +1,11 @@
 /*
-c** sampler.c for scroller in ~/RENDU/INFOGRAPHIE/gfx_scroller/sampler
+** sampler.c for scroller in ~/RENDU/INFOGRAPHIE/gfx_scroller/sampler
 **
 ** Made by marc brout
 ** Login   <marc brout@epitech.net>
 **
 ** Started on  Fri Mar 18 22:44:57 2016 marc brout
-** Last update Sun Mar 20 22:33:01 2016 marc brout
+** Last update Sun Mar 20 22:53:12 2016 benjamin duhieu
 */
 
 #include <math.h>
