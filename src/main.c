@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:25:37 2016 bougon_p
-** Last update Sun Mar 20 12:02:00 2016 marc brout
+** Last update Sun Mar 20 21:06:14 2016 marc brout
 */
 
 #include "mega.h"
@@ -73,6 +73,8 @@ int		main()
   bunny_loop(data.window, 60, &data);
   delete_all_clipables(&data);
   free_sampler(&data);
+  free_effects(&data);
   bunny_stop(data.window);
+  /* memory_check = 1; */
   return (0);
 }

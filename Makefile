@@ -5,7 +5,7 @@
 ## Login   <bougon_p@epitech.net>
 ## 
 ## Started on  Fri Mar 18 20:18:33 2016 bougon_p
-## Last update Sun Mar 20 09:28:53 2016 benjamin duhieu
+## Last update Sun Mar 20 20:48:26 2016 marc brout
 ##
 
 # USEFUL VARIABLES
@@ -35,6 +35,8 @@ WAVE		=	src/wave/
 
 MORT		=	src/mort/
 
+FREE		=	src/free/
+
 SRC		=	$(MAIN)main.c \
 			$(GAME)init_var.c \
 			$(GAME)display.c \
@@ -54,7 +56,8 @@ SRC		=	$(MAIN)main.c \
 			$(WAVE)rohan.c \
 			$(WAVE)new.c \
 			$(MORT)mort.c \
-			$(MORT)new_mort.c
+			$(MORT)new_mort.c \
+			$(FREE)free_effects.c
 
 OBJS    	=	$(SRC:.c=.o)
 

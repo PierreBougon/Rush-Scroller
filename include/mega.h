@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:39:34 2016 bougon_p
-** Last update Sun Mar 20 11:51:23 2016 marc brout
+** Last update Sun Mar 20 20:43:45 2016 marc brout
 */
 
 #ifndef mega_h_
@@ -156,9 +156,10 @@ void	check_player_movement(t_data *,
 /*
 ** OTHERS
 */
+
 void	delete_all_clipables(t_data *);
 int	init_var(t_data *);
 int	init_fire(t_data *);
-
+void	free_effects(t_data *);
 
 #endif /* !mega_h_  */
