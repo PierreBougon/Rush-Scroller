@@ -5,9 +5,10 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sat Mar 19 23:13:48 2016 bougon_p
-** Last update Sun Mar 20 14:15:41 2016 bougon_p
+** Last update Sun Mar 20 14:38:23 2016 bougon_p
 */
 
+#include <string.h>
 #include "mega.h"
 
 void	disp_game(t_data *data)
@@ -64,9 +65,14 @@ void	rohan(t_rohan *rohan)
 
 void	disp_menu(t_data *data)
 {
+  data->menu.pos.x--;
+  if (data->menu.pos.x <= -data->letters)
+    data->menu.pos.x = data->menu.scr->clipable.clip_width;
   fire(data->menu.fire);
   rohan(data->menu.rohan);
   mort(data->menu.mort);
+  disp_text(data->menu.txt, &data->menu, data->str);
+  bunny_blit(&data->window->buffer, &data->menu.scr->clipable, NULL);
 }
 
 void	disp_end(UNUSED t_data *data)

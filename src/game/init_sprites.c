@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sat Mar 19 00:06:52 2016 bougon_p
-** Last update Sat Mar 19 23:43:12 2016 benjamin duhieu
+** Last update Sun Mar 20 11:41:54 2016 benjamin duhieu
 */
 
 #include "mega.h"
@@ -62,6 +62,7 @@ int	init_sprites(t_data *data)
       !(data->player.attck = bunny_load_picture("img/attack.png")) ||
       !(data->death = bunny_load_effect("files/sounds/dead.ogg")) ||
       !(data->saber = bunny_load_effect("files/sounds/laser.ogg")) ||
+      !(data->menu.png = bunny_load_pixelarray("img/font8.gif")) ||
       !(data->player.stay = bunny_load_picture("img/stay.png")))
     return (1);
   data->player.attck->scale.x = 1.03;
