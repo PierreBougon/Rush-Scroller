@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:25:37 2016 bougon_p
-** Last update Sun Mar 20 09:27:29 2016 benjamin duhieu
+** Last update Sun Mar 20 13:44:50 2016 bougon_p
 */
 
 #include "mega.h"
@@ -18,8 +18,11 @@ t_bunny_response	button_key(t_bunny_event_state state,
   data = _data;
   if (keysym == BKS_ESCAPE && state == GO_DOWN)
     return (EXIT_ON_SUCCESS);
-  if (data->state.game)
+  if (data->state.game && state == GO_DOWN)
     check_player_movement(data, keysym, state);
+  if ((keysym == BKS_LEFT || keysym == BKS_RIGHT)
+      && state == GO_UP)
+    data->player.ismoving = false;
   if (data->state.menu && data->menu.start &&
       keysym == BKS_RETURN && state == GO_DOWN)
     {
@@ -46,6 +49,7 @@ t_bunny_response	mainloop(void *_data)
   t_data                *data;
 
   data = _data;
+  check_end_game(data);
   sampler(data->samples[data->curmusic], &data->change);
   if (data->state.menu)
     disp_menu(data);

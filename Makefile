@@ -5,7 +5,7 @@
 ## Login   <bougon_p@epitech.net>
 ## 
 ## Started on  Fri Mar 18 20:18:33 2016 bougon_p
-## Last update Sun Mar 20 09:28:53 2016 benjamin duhieu
+## Last update Sun Mar 20 12:13:07 2016 bougon_p
 ##
 
 # USEFUL VARIABLES
@@ -44,6 +44,8 @@ SRC		=	$(MAIN)main.c \
 			$(GAME)check_pos.c \
 			$(GAME)init_sprites.c \
 			$(PLAYER)player.c \
+			$(PLAYER)anim.c \
+			$(PLAYER)hitbox.c \
 			$(PLAYER)player_moves.c \
 			$(SAMPLER)sampler.c \
 			$(SAMPLER)init_sampler.c \

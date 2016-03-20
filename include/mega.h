@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:39:34 2016 bougon_p
-** Last update Sun Mar 20 09:27:43 2016 benjamin duhieu
+** Last update Sun Mar 20 14:06:29 2016 bougon_p
 */
 
 #ifndef mega_h_
@@ -25,7 +25,10 @@
 # define LIMIT_RIGHT WIN_WIDTH / 2 + 150
 # define LIMIT_LEFT WIN_WIDTH / 2 - 150
 # define FLOOR 332
+
 # define HITBOX 100
+# define END_GAME 3000
+
 
 # define SKY 0xFF705A4E
 # define GREY 0xFF252525
@@ -149,7 +152,8 @@ void	refresh_player_pos(t_player *);
 void	check_player_movement(t_data *,
 			      t_bunny_keysym,
 			      t_bunny_event_state);
-
+void	check_murder(t_data *);
+void	check_end_game(t_data *);
 /*
 ** OTHERS
 */
