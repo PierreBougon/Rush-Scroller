@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 **
 ** Started on  Wed Jan  6 23:43:10 2016 marc brout
-** Last update Sun Mar 20 20:09:16 2016 benjamin duhieu
+** Last update Sun Mar 20 22:57:46 2016 marc brout
 */
 
 #ifndef ROHAN_H_
@@ -21,7 +21,6 @@ typedef struct		s_rohan
   t_bunny_pixelarray	*play;
   t_bunny_pixelarray	*quit;
   t_bunny_pixelarray	*temp;
-  /* int		        decal; */
   int			turn;
   double		sin;
 }			t_rohan;

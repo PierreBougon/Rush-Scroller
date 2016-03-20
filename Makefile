@@ -5,7 +5,7 @@
 ## Login   <bougon_p@epitech.net>
 ## 
 ## Started on  Fri Mar 18 20:18:33 2016 bougon_p
-## Last update Sun Mar 20 22:45:37 2016 benjamin duhieu
+## Last update Sun Mar 20 22:51:44 2016 marc brout
 ##
 
 # USEFUL VARIABLES
@@ -94,7 +94,7 @@ IFLAG	=	-Iinclude/
 
 CFLAGS  =	-W -Wall -Wextra -g $(IFLAG)
 
-CC      =	gcc $(CFLAGS) -D LAPIN_ALLOCATOR_DEACTIVATED
+CC      =	gcc $(CFLAGS) #-D LAPIN_ALLOCATOR_DEACTIVATED
 
 
 
