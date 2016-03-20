@@ -1,11 +1,11 @@
 /*
-1;2802;0c** delete.c for delete in /home/bougon_p/rendu/gfx_scroller
+** delete.c for delete in /home/bougon_p/rendu/gfx_scroller
 **
 ** Made by bougon_p
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sat Mar 19 15:48:30 2016 bougon_p
-** Last update Sat Mar 19 23:53:50 2016 benjamin duhieu
+** Last update Sun Mar 20 12:01:57 2016 marc brout
 */
 
 #include "mega.h"

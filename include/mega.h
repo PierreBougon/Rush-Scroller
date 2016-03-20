@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:39:34 2016 bougon_p
-** Last update Sun Mar 20 14:06:29 2016 bougon_p
+** Last update Sun Mar 20 14:16:16 2016 bougon_p
 */
 
 #ifndef mega_h_
@@ -17,6 +17,8 @@
 # include "lapin.h"
 # include "sampler.h"
 # include "fire.h"
+# include "mort.h"
+# include "rohan.h"
 
 # define UNUSED __attribute__((__unused__))
 
@@ -86,8 +88,9 @@ typedef struct		s_state
 
 typedef struct		s_menu
 {
-  t_bunny_pixelarray	*menu;
+  t_mort		*mort;
   t_fire		*fire;
+  t_rohan		*rohan;
   bool			start;
 }			t_menu;
 
@@ -159,5 +162,7 @@ void	check_end_game(t_data *);
 */
 void	delete_all_clipables(t_data *);
 int	init_var(t_data *);
+int	init_fire(t_data *);
+
 
 #endif /* !mega_h_  */

@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 **
 ** Started on  Fri Dec  4 21:09:30 2015 marc brout
-** Last update Sat Mar 19 23:02:01 2016 marc brout
+** Last update Sun Mar 20 10:19:21 2016 marc brout
 */
 
 #ifndef FIRE_H_
@@ -18,8 +18,8 @@
 # include <math.h>
 
 # define COLOR_BACK BLACK
-# define WIDTH 1280
-# define HEIGHT 1024
+# define WIDTH 640
+# define HEIGHT 480
 # define PALETTE 128
 
 typedef struct		s_feu

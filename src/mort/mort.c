@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 **
 ** Started on  Wed Jan  6 23:41:59 2016 marc brout
-** Last update Sat Mar 19 23:45:10 2016 marc brout
+** Last update Sun Mar 20 10:35:51 2016 marc brout
 */
 
 #include "mort.h"
@@ -33,9 +33,7 @@ t_bunny_response	main_loop_mort(void *data)
     {
       mort->col -= 1;
       if (mort->col <= 0)
-	{
-	  going = 0;
-	}
+	going = 0;
     }
   return (GO_ON);
 }
