@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sat Mar 19 23:13:48 2016 bougon_p
-** Last update Sun Mar 20 23:24:29 2016 marc brout
+** Last update Sun Mar 20 23:33:00 2016 marc brout
 */
 
 #include <string.h>
@@ -85,9 +85,4 @@ void	disp_menu(t_data *data)
   rohan(data, data->menu.rohan);
   disp_text(data->menu.txt, &data->menu, data->str);
   bunny_blit(&data->window->buffer, &data->menu.scr->clipable, NULL);
-}
-
-void	disp_end(t_data *data)
-{
-  plasma(data);
 }

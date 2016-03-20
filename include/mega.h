@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:39:34 2016 bougon_p
-** Last update Sun Mar 20 22:28:43 2016 benjamin duhieu
+** Last update Sun Mar 20 22:49:56 2016 benjamin duhieu
 */
 
 #ifndef mega_h_
@@ -178,7 +178,7 @@ void	check_murder(t_data *);
 void	check_end_game(t_data *);
 void	fondu(t_data *);
 /*
-** Disp text: tet.c
+** Disp text: text.c && text_next.c
 */
 
 t_text	*char_to_list(char *);

@@ -5,44 +5,11 @@
 ** Login   <duhieu_b@epitech.net>
 **
 ** Started on  Sun Mar 20 10:03:58 2016 benjamin duhieu
-** Last update Sun Mar 20 23:10:02 2016 marc brout
+** Last update Sun Mar 20 23:14:05 2016 benjamin duhieu
 */
 
 #include "mega.h"
 #include "text.h"
-
-void		fill_list(t_text *txt, char c, int i)
-{
-  txt->chr = c;
-  txt->col = i % 9;
-  txt->row = i / 9;
-  txt->next = NULL;
-}
-
-t_text		*char_to_list(char *txt)
-{
-  t_text	*elem;
-  t_text	*text;
-  int		i;
-
-  if (!(text = malloc(sizeof(t_text))))
-    return (NULL);
-  text->next = NULL;
-  elem = text;
-  i = -1;
-  while (txt[++i])
-    {
-      if (i < 26)
-	fill_list(elem, txt[i], i);
-      else
-	fill_list(elem, txt[i], i + 1);
-      if (!(elem->next = malloc(sizeof(t_text))))
-	return (NULL);
-      elem = elem->next;
-    }
-  elem->next = NULL;
-  return (text);
-}
 
 t_text		*chk_chr(t_text *txt, char c)
 {
@@ -71,20 +38,18 @@ void		put_on_screen(t_menu *text, t_text *tmp, int i, int j)
   hei = (i + (2 * tmp->row) + (32 * tmp->row)) + 1;
   pix = text->pos.x + j + text->count * 34;
   if (pix < text->scr->clipable.clip_width && pix >= 0)
-    {
-      if (img[wid + hei * text->png->clipable.clip_width].full != img[0].full)
-      	{
-	  pixel[pix + (text->pos.y + i + (int)text->move) *
-		text->scr->clipable.clip_width].argb[0] =
-	    img[wid + hei * text->png->clipable.clip_width].argb[0];
-	  pixel[pix + (text->pos.y + i + (int)text->move) *
-		text->scr->clipable.clip_width].argb[1] =
-	    img[wid + hei * text->png->clipable.clip_width].argb[1];
-	  pixel[pix + (text->pos.y + i + (int)text->move) *
-		text->scr->clipable.clip_width].argb[2] =
-	    img[wid + hei * text->png->clipable.clip_width].argb[2];
-	}
-    }
+    if (img[wid + hei * text->png->clipable.clip_width].full != img[0].full)
+      {
+	pixel[pix + (text->pos.y + i + (int)text->move) *
+	      text->scr->clipable.clip_width].argb[0] =
+	  img[wid + hei * text->png->clipable.clip_width].argb[0];
+	pixel[pix + (text->pos.y + i + (int)text->move) *
+	      text->scr->clipable.clip_width].argb[1] =
+	  img[wid + hei * text->png->clipable.clip_width].argb[1];
+	pixel[pix + (text->pos.y + i + (int)text->move) *
+	      text->scr->clipable.clip_width].argb[2] =
+	  img[wid + hei * text->png->clipable.clip_width].argb[2];
+      }
 }
 
 void		disalpha(char *str)
