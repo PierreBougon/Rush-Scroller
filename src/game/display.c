@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sat Mar 19 23:13:48 2016 bougon_p
-** Last update Sun Mar 20 14:22:31 2016 benjamin duhieu
+** Last update Sun Mar 20 14:34:21 2016 benjamin duhieu
 */
 
 #include <string.h>
@@ -66,6 +66,8 @@ void	disp_menu(t_data *data)
   data->menu.pos.x--;
   if (data->menu.pos.x <= -data->letters)
     data->menu.pos.x = data->menu.scr->clipable.clip_width;
+  /* data->menu.pos.y = */
+  /*   (sin(data->menu.pos.x / 5.55 + (34 * M_PI / 360)) * 360 / M_PI) / 2; */
   //display du menu enjoy les effets :)
   fire(data->menu.fire);
   rohan(data->menu.rohan);

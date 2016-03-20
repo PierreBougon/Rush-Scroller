@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:39:34 2016 bougon_p
-** Last update Sun Mar 20 14:21:34 2016 benjamin duhieu
+** Last update Sun Mar 20 17:46:41 2016 benjamin duhieu
 */
 
 #ifndef mega_h_
@@ -91,6 +91,7 @@ typedef struct		s_menu
   t_bunny_position	pos;
   t_text		*txt;
   t_fire		*fire;
+  double		move;
   int			count;
   t_mort		*mort;
   t_rohan		*rohan;
@@ -105,6 +106,8 @@ typedef	struct		s_data
   t_bunny_effect	*death;
   t_sample		*samples[NB_SAMPLES];
   char			*str;
+  double		scale;
+  int			tmpx;
   int			letters;
   int			curmusic;
   int			change;
@@ -160,7 +163,6 @@ void	refresh_player_pos(t_player *);
 void	check_player_movement(t_data *,
 			      t_bunny_keysym,
 			      t_bunny_event_state);
-
 /*
 ** Disp text: tet.c
 */
@@ -172,6 +174,15 @@ void	disp_text(t_text *, t_menu *, char *);
 void	fill_list(t_text *, char, int);
 void	put_space();
 void	put_on_screen(t_menu *, t_text *, int, int);
+
+/*
+** Disp text: tet.c
+*/
+
+void	no_scale(t_data *);
+void	no_rotate_picture(t_data *);
+void	scale_picture(t_data *);
+void	rotate_picture(t_data *);
 
 /*
 ** OTHERS

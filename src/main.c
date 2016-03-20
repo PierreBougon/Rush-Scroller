@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:25:37 2016 bougon_p
-** Last update Sun Mar 20 14:22:49 2016 benjamin duhieu
+** Last update Sun Mar 20 17:48:55 2016 benjamin duhieu
 */
 
 #include <string.h>
@@ -26,6 +26,17 @@ t_bunny_response	button_key(t_bunny_event_state state,
     {
       data->state.menu = false;
       data->state.game = true;
+    }
+  if (keysym == BKS_Z && state == GO_DOWN)
+    {
+      rotate_picture(data);
+      scale_picture(data);
+    }
+  if (data->scale > 0 && keysym == BKS_Z && state == GO_UP)
+    {
+      no_scale(data);
+      no_rotate_picture(data);
+      data->scale = 0;
     }
   if (state == GO_DOWN)
     sampler_keys(data, keysym);
@@ -66,6 +77,7 @@ int		main()
   bunny_set_maximum_ram(20000000);
   data.str = strdup(PRESENTATION);
   data.letters = strlen(data.str) * 34;
+  data.scale = 0.0;
   if (!(data.window = bunny_start(WIN_WIDTH, WIN_HEIGHT, 0, "MEGAMAN")) ||
       !(data.pixarray = bunny_new_pixelarray(WIN_WIDTH, WIN_HEIGHT)))
     return (1);
