@@ -5,7 +5,7 @@
 ** Login   <duhieu_b@epitech.net>
 **
 ** Started on  Sun Mar 20 10:03:58 2016 benjamin duhieu
-** Last update Sun Mar 20 23:10:02 2016 marc brout
+** Last update Sun Mar 20 23:28:02 2016 bougon_p
 */
 
 #include "mega.h"
@@ -25,7 +25,7 @@ t_text		*char_to_list(char *txt)
   t_text	*text;
   int		i;
 
-  if (!(text = malloc(sizeof(t_text))))
+  if (!(text = bunny_malloc(sizeof(t_text))))
     return (NULL);
   text->next = NULL;
   elem = text;
@@ -36,7 +36,7 @@ t_text		*char_to_list(char *txt)
 	fill_list(elem, txt[i], i);
       else
 	fill_list(elem, txt[i], i + 1);
-      if (!(elem->next = malloc(sizeof(t_text))))
+      if (!(elem->next = bunny_malloc(sizeof(t_text))))
 	return (NULL);
       elem = elem->next;
     }

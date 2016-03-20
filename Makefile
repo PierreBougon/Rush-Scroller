@@ -5,7 +5,7 @@
 ## Login   <bougon_p@epitech.net>
 ## 
 ## Started on  Fri Mar 18 20:18:33 2016 bougon_p
-## Last update Sun Mar 20 22:51:44 2016 marc brout
+## Last update Sun Mar 20 23:24:32 2016 bougon_p
 ##
 
 # USEFUL VARIABLES
@@ -38,8 +38,6 @@ PLASMA		=	src/plsm/
 MORT		=	src/mort/
 
 FREE		=	src/free/
-
-END		=	src/end/
 
 SRC		=	$(MAIN)main.c \
 			$(GAME)text.c \
