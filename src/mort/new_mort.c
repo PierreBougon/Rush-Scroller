@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 **
 ** Started on  Thu Jan  7 00:32:10 2016 marc brout
-** Last update Sun Mar 20 12:13:04 2016 marc brout
+** Last update Sun Mar 20 23:21:12 2016 marc brout
 */
 
 #include "mort.h"
@@ -50,8 +50,9 @@ void			decrem(t_mort *mort)
       while (++d.x < WIDTH)
 	{
 	  d.pos = d.x + (d.y * mort->pix->clipable.clip_width);
-	  if (d.pixels[d.pos].argb[1] >= mort->col)
-	    decrem_suite(&d, mort);
+	  if (d.pixels[d.pos].full)
+	    if (d.pixels[d.pos].argb[1] >= mort->col)
+	      decrem_suite(&d, mort);
 	}
     }
 }

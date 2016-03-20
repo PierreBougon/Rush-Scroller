@@ -5,7 +5,11 @@
 ## Login   <bougon_p@epitech.net>
 ## 
 ## Started on  Fri Mar 18 20:18:33 2016 bougon_p
+<<<<<<< HEAD
 ## Last update Sun Mar 20 23:24:32 2016 bougon_p
+=======
+## Last update Sun Mar 20 23:14:23 2016 benjamin duhieu
+>>>>>>> ab572c8335c99da343b72080b6a814e0ad5314e4
 ##
 
 # USEFUL VARIABLES
@@ -41,6 +45,7 @@ FREE		=	src/free/
 
 SRC		=	$(MAIN)main.c \
 			$(GAME)text.c \
+			$(GAME)text_next.c \
 			$(GAME)check_menu.c \
 			$(GAME)scale.c \
 			$(GAME)tekpixel.c \

@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sat Mar 19 22:47:45 2016 bougon_p
-** Last update Sun Mar 20 22:40:41 2016 marc brout
+** Last update Sun Mar 20 23:28:05 2016 marc brout
 */
 
 #include "mega.h"
@@ -61,7 +61,7 @@ int	init_plasma(t_data *data)
 	bunny_new_pixelarray(WIN_WIDTH, WIN_HEIGHT)))
     return (1);
   if ((data->end.plsm.colorarray =
-       malloc(sizeof(t_color) * 128)) == NULL)
+       bunny_malloc(sizeof(t_color) * 128)) == NULL)
     return (1);
   set_colorarray_plasma(data->end.plsm.colorarray);
   data->end.plsm.move = 10;

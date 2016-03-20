@@ -5,12 +5,17 @@
 ** Login   <duhieu_b@epitech.net>
 **
 ** Started on  Sun Mar 20 10:03:58 2016 benjamin duhieu
+<<<<<<< HEAD
 ** Last update Sun Mar 20 23:28:02 2016 bougon_p
+=======
+** Last update Sun Mar 20 23:14:05 2016 benjamin duhieu
+>>>>>>> ab572c8335c99da343b72080b6a814e0ad5314e4
 */
 
 #include "mega.h"
 #include "text.h"
 
+<<<<<<< HEAD
 void		fill_list(t_text *txt, char c, int i)
 {
   txt->chr = c;
@@ -44,6 +49,8 @@ t_text		*char_to_list(char *txt)
   return (text);
 }
 
+=======
+>>>>>>> ab572c8335c99da343b72080b6a814e0ad5314e4
 t_text		*chk_chr(t_text *txt, char c)
 {
   t_text	*elem;
@@ -71,20 +78,18 @@ void		put_on_screen(t_menu *text, t_text *tmp, int i, int j)
   hei = (i + (2 * tmp->row) + (32 * tmp->row)) + 1;
   pix = text->pos.x + j + text->count * 34;
   if (pix < text->scr->clipable.clip_width && pix >= 0)
-    {
-      if (img[wid + hei * text->png->clipable.clip_width].full != img[0].full)
-      	{
-	  pixel[pix + (text->pos.y + i + (int)text->move) *
-		text->scr->clipable.clip_width].argb[0] =
-	    img[wid + hei * text->png->clipable.clip_width].argb[0];
-	  pixel[pix + (text->pos.y + i + (int)text->move) *
-		text->scr->clipable.clip_width].argb[1] =
-	    img[wid + hei * text->png->clipable.clip_width].argb[1];
-	  pixel[pix + (text->pos.y + i + (int)text->move) *
-		text->scr->clipable.clip_width].argb[2] =
-	    img[wid + hei * text->png->clipable.clip_width].argb[2];
-	}
-    }
+    if (img[wid + hei * text->png->clipable.clip_width].full != img[0].full)
+      {
+	pixel[pix + (text->pos.y + i + (int)text->move) *
+	      text->scr->clipable.clip_width].argb[0] =
+	  img[wid + hei * text->png->clipable.clip_width].argb[0];
+	pixel[pix + (text->pos.y + i + (int)text->move) *
+	      text->scr->clipable.clip_width].argb[1] =
+	  img[wid + hei * text->png->clipable.clip_width].argb[1];
+	pixel[pix + (text->pos.y + i + (int)text->move) *
+	      text->scr->clipable.clip_width].argb[2] =
+	  img[wid + hei * text->png->clipable.clip_width].argb[2];
+      }
 }
 
 void		disalpha(char *str)
