@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sat Mar 19 23:13:48 2016 bougon_p
-** Last update Sun Mar 20 18:31:46 2016 bougon_p
+** Last update Sun Mar 20 20:10:05 2016 benjamin duhieu
 */
 
 #include <string.h>
@@ -56,9 +56,18 @@ void		mort(t_mort *mort)
   bunny_blit(&mort->win->buffer, &mort->temp->clipable, NULL);
 }
 
-void	rohan(t_rohan *rohan)
+void	rohan(t_data *data, t_rohan *rohan)
 {
-  copy(rohan);
+  if (data->menu.start == true)
+    {
+      copy(rohan->temp, rohan->play, rohan, &rohan->pos_play);
+      copy_normal(rohan->temp, rohan->quit, &rohan->pos_quit);
+    }
+  else
+    {
+      copy(data->menu.scr, rohan->quit, rohan, &rohan->pos_play);
+      copy_normal(rohan->temp, rohan->quit, &rohan->pos_quit);
+    }
   rohan->turn += 1;
   bunny_blit(&rohan->win->buffer, &rohan->temp->clipable, NULL);
 }
@@ -69,8 +78,8 @@ void	disp_menu(t_data *data)
   if (data->menu.pos.x <= -data->letters)
     data->menu.pos.x = data->menu.scr->clipable.clip_width;
   fire(data->menu.fire);
-  rohan(data->menu.rohan);
   mort(data->menu.mort);
+  rohan(data, data->menu.rohan);
   disp_text(data->menu.txt, &data->menu, data->str);
   bunny_blit(&data->window->buffer, &data->menu.scr->clipable, NULL);
 }

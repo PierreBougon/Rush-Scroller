@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:25:37 2016 bougon_p
-** Last update Sun Mar 20 19:36:50 2016 bougon_p
+** Last update Sun Mar 20 22:25:53 2016 bougon_p
 */
 
 #include <string.h>
@@ -17,26 +17,28 @@ t_bunny_response	button_key(t_bunny_event_state state,
   t_data		*data;
 
   data = _data;
-  if (keysym == BKS_A)
-    return (EXIT_ON_SUCCESS);
-  if (keysym == BKS_ESCAPE && state == GO_DOWN)
-    {
-      data->state.menu = true;
-      data->state.game = false;
-    }
   if (data->state.game && state == GO_DOWN)
     check_player_movement(data, keysym, state);
   if ((keysym == BKS_LEFT || keysym == BKS_RIGHT)
       && state == GO_UP)
     data->player.ismoving = false;
-  if (data->state.menu && data->menu.start &&
-      keysym == BKS_RETURN && state == GO_DOWN)
+  if (keysym == BKS_Z && state == GO_DOWN)
     {
-      data->state.menu = false;
-      data->state.game = true;
+      rotate_picture(data);
+      scale_picture(data);
+    }
+  if (data->scale > 0 && keysym == BKS_Z && state == GO_UP)
+    {
+      no_scale(data);
+      no_rotate_picture(data);
+      data->scale = 0;
     }
   if (state == GO_DOWN)
-    sampler_keys(data, keysym);
+    {
+      sampler_keys(data, keysym);
+      if (check_menu(data, keysym) == 1)
+	return (EXIT_ON_SUCCESS);
+    }
   return (GO_ON);
 }
 
@@ -60,7 +62,12 @@ t_bunny_response	mainloop(void *_data)
   if (data->state.menu)
     disp_menu(data);
   else if (data->state.game)
-    disp_game(data);
+    {
+      if (!data->state.fondu)
+	fondu(data);
+      else
+	disp_game(data);
+    }
   else if (data->state.end)
     disp_end(data);
   bunny_display(data->window);
@@ -75,6 +82,7 @@ int		main()
   bunny_set_maximum_ram(20000000);
   data.str = strdup(PRESENTATION);
   data.letters = strlen(data.str) * 34;
+  data.scale = 0.0;
   if (!(data.window = bunny_start(WIN_WIDTH, WIN_HEIGHT, 0, "MEGAMAN")) ||
       !(data.pixarray = bunny_new_pixelarray(WIN_WIDTH, WIN_HEIGHT)))
     return (1);
@@ -86,7 +94,9 @@ int		main()
   bunny_loop(data.window, 60, &data);
   delete_all_clipables(&data);
   free_sampler(&data);
+  free_effects(&data);
   free (data.end.plsm.colorarray);
   bunny_stop(data.window);
+  /* memory_check = 1; */
   return (0);
 }

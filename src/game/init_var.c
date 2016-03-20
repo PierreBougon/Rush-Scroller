@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sat Mar 19 22:47:45 2016 bougon_p
-** Last update Sun Mar 20 18:38:55 2016 bougon_p
+** Last update Sun Mar 20 20:38:59 2016 benjamin duhieu
 */
 
 #include "mega.h"
@@ -13,13 +13,19 @@
 int	init_rohan(t_data *data)
 {
   if (!(data->menu.rohan = bunny_malloc(sizeof(t_rohan))) ||
-      !(data->menu.rohan->pix =
-	bunny_load_pixelarray("./img/rohan.jpg")))
+      !(data->menu.rohan->play =
+	bunny_load_pixelarray("./img/play_butt.png")) ||
+      !(data->menu.rohan->quit =
+	bunny_load_pixelarray("./img/quit_butt.png")))
     return (1);
+  /* data->menu.rohan->decal = 0; */
+  data->menu.rohan->turn = 0;
   data->menu.rohan->temp = data->pixarray;
   data->menu.rohan->win = data->window;
-  data->menu.rohan->decal = 0;
-  data->menu.rohan->turn = 0;
+  data->menu.rohan->pos_play.x = 200;
+  data->menu.rohan->pos_play.y = 200;
+  data->menu.rohan->pos_quit.x = 200;
+  data->menu.rohan->pos_quit.y = 300;
   return (0);
 }
 
@@ -67,11 +73,12 @@ int	init_var(t_data *data)
 {
   data->menu.scr = data->pixarray;
   data->menu.pos.x = data->menu.scr->clipable.clip_width;
-  data->menu.pos.y = 100;
+  data->menu.pos.y = 75;
   if (!(data->menu.txt =
 	char_to_list("abcdefghijklmnopqrstuvwxyz1234567890,.:'-<>!")))
     return (1);
   data->state.menu = true;
+  data->state.fondu = false;
   data->state.game = false;
   data->state.end = false;
   data->menu.start = true;

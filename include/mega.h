@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:39:34 2016 bougon_p
-** Last update Sun Mar 20 19:31:01 2016 bougon_p
+** Last update Sun Mar 20 22:27:10 2016 bougon_p
 */
 
 #ifndef mega_h_
@@ -30,10 +30,8 @@
 # define LIMIT_LEFT WIN_WIDTH / 2 - 150
 # define FLOOR 332
 
-# define HITBOX 100
-/*# define END_GAME 3000*/
-# define END_GAME 100
-
+# define HITBOX 110
+# define END_GAME 3000
 
 # define SKY 0xFF705A4E
 # define GREY 0xFF252525
@@ -84,6 +82,7 @@ typedef struct		s_back
 
 typedef struct		s_state
 {
+  bool			fondu;
   bool			menu;
   bool			game;
   bool			end;
@@ -96,6 +95,7 @@ typedef struct		s_menu
   t_bunny_position	pos;
   t_text		*txt;
   t_fire		*fire;
+  double		move;
   int			count;
   t_mort		*mort;
   t_rohan		*rohan;
@@ -116,6 +116,8 @@ typedef	struct		s_data
   t_bunny_effect	*death;
   t_sample		*samples[NB_SAMPLES];
   char			*str;
+  double		scale;
+  int			tmpx;
   int			letters;
   int			curmusic;
   int			change;
@@ -174,7 +176,7 @@ void	check_player_movement(t_data *,
 			      t_bunny_event_state);
 void	check_murder(t_data *);
 void	check_end_game(t_data *);
-
+void	fondu(t_data *);
 /*
 ** Disp text: tet.c
 */
@@ -188,13 +190,25 @@ void	put_space();
 void	put_on_screen(t_menu *, t_text *, int, int);
 
 /*
+** Disp text: tet.c
+*/
+
+void	no_scale(t_data *);
+void	no_rotate_picture(t_data *);
+void	scale_picture(t_data *);
+void	rotate_picture(t_data *);
+
+/*
 ** OTHERS
 */
+
 void	delete_all_clipables(t_data *);
 int	init_var(t_data *);
 int	init_fire(t_data *);
+void	free_effects(t_data *);
 void	tekpixel(t_bunny_pixelarray *,
 		 t_bunny_position *, t_color *);
 int	plasma(t_data *);
+int	check_menu(t_data *, t_bunny_keysym);
 
 #endif /* !mega_h_  */

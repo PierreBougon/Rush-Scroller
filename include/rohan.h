@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 **
 ** Started on  Wed Jan  6 23:43:10 2016 marc brout
-** Last update Sun Mar 20 12:03:35 2016 marc brout
+** Last update Sun Mar 20 20:09:16 2016 benjamin duhieu
 */
 
 #ifndef ROHAN_H_
@@ -16,15 +16,21 @@
 typedef struct		s_rohan
 {
   t_bunny_window	*win;
-  t_bunny_pixelarray	*pix;
+  t_bunny_position	pos_play;
+  t_bunny_position	pos_quit;
+  t_bunny_pixelarray	*play;
+  t_bunny_pixelarray	*quit;
   t_bunny_pixelarray	*temp;
-  int		        decal;
+  /* int		        decal; */
   int			turn;
   double		sin;
 }			t_rohan;
 
 void my_back(t_bunny_pixelarray *);
-void copy(t_rohan *);
+void copy_normal(t_bunny_pixelarray *, t_bunny_pixelarray *,
+		 t_bunny_position *);
+void copy(t_bunny_pixelarray *, t_bunny_pixelarray *,
+	  t_rohan *, t_bunny_position *);
 void aff_rohan(t_rohan *, char *);
 t_bunny_response my_key(t_bunny_event_state,
 			t_bunny_keysym,

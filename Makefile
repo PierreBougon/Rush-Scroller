@@ -5,7 +5,7 @@
 ## Login   <bougon_p@epitech.net>
 ## 
 ## Started on  Fri Mar 18 20:18:33 2016 bougon_p
-## Last update Sun Mar 20 18:19:38 2016 bougon_p
+## Last update Sun Mar 20 22:25:00 2016 bougon_p
 ##
 
 # USEFUL VARIABLES
@@ -37,11 +37,16 @@ PLASMA		=	src/plsm/
 
 MORT		=	src/mort/
 
+FREE		=	src/free/
+
 END		=	src/end/
 
 SRC		=	$(MAIN)main.c \
-			$(MAIN)text.c \
-			$(MAIN)tekpixel.c \
+			$(GAME)text.c \
+			$(GAME)check_menu.c \
+			$(GAME)scale.c \
+			$(GAME)tekpixel.c \
+			$(GAME)fondu.c \
 			$(GAME)init_var.c \
 			$(GAME)display.c \
 			$(GAME)background.c \
@@ -63,10 +68,10 @@ SRC		=	$(MAIN)main.c \
 			$(WAVE)new.c \
 			$(MORT)mort.c \
 			$(MORT)new_mort.c \
+			$(FREE)free_effects.c \
 			$(PLASMA)plasma.c \
 			$(PLASMA)init_plasma.c \
 			$(PLASMA)set_plasma.c \
-
 
 OBJS    	=	$(SRC:.c=.o)
 
