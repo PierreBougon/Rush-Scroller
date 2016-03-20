@@ -5,7 +5,7 @@
 ## Login   <bougon_p@epitech.net>
 ## 
 ## Started on  Fri Mar 18 20:18:33 2016 bougon_p
-## Last update Sun Mar 20 21:48:26 2016 marc brout
+## Last update Sun Mar 20 21:49:51 2016 marc brout
 ##
 
 # USEFUL VARIABLES
@@ -66,7 +66,7 @@ SRC		=	$(MAIN)main.c \
 			$(WAVE)new.c \
 			$(MORT)mort.c \
 			$(MORT)new_mort.c \
-			$(FREE)free_effects.c
+			$(FREE)free_effects.c \
 			$(PLASMA)plasma.c \
 			$(PLASMA)init_plasma.c \
 			$(PLASMA)set_plasma.c \
