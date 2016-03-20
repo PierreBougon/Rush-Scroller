@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:39:34 2016 bougon_p
-** Last update Sun Mar 20 21:51:51 2016 benjamin duhieu
+** Last update Sun Mar 20 22:05:11 2016 benjamin duhieu
 */
 
 #ifndef mega_h_
@@ -31,8 +31,8 @@
 # define FLOOR 332
 
 # define HITBOX 100
-/*# define END_GAME 3000*/
-# define END_GAME 100
+# define END_GAME 3000
+/* # define END_GAME 100 */
 
 
 # define SKY 0xFF705A4E
