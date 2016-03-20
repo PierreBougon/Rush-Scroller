@@ -1,11 +1,11 @@
 /*
-1;2802;0c** sampler.h for scroller
+** sampler.h for scroller
 **
 ** Made by marc brout
 ** Login   <brout_m@epitech.net>
 **
 ** Started on  Fri Mar 18 22:45:25 2016 marc brout
-** Last update Sat Mar 19 21:10:14 2016 marc brout
+** Last update Sun Mar 20 10:06:32 2016 marc brout
 */
 
 #ifndef SAMPLER_H_
@@ -19,7 +19,8 @@
 
 # define SAMPLE_FOLD "files/sounds"
 # define BSF_1 "files/sounds/aerodynamicLOL.bsf"
-# define NB_SAMPLES 1
+# define BSF_2 "files/sounds/darude.bsf"
+# define NB_SAMPLES 2
 # define RAD(x) (((x) * M_PI) / 180)
 
 typedef	struct		s_sample
