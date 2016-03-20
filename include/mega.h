@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:39:34 2016 bougon_p
-** Last update Sun Mar 20 09:27:43 2016 benjamin duhieu
+** Last update Sun Mar 20 12:37:19 2016 benjamin duhieu
 */
 
 #ifndef mega_h_
@@ -17,6 +17,7 @@
 # include "lapin.h"
 # include "sampler.h"
 # include "fire.h"
+# include "text.h"
 
 # define UNUSED __attribute__((__unused__))
 
@@ -84,7 +85,12 @@ typedef struct		s_state
 typedef struct		s_menu
 {
   t_bunny_pixelarray	*menu;
+  t_bunny_pixelarray	*scr;
+  t_bunny_pixelarray	*png;
+  t_bunny_position	pos;
+  t_text		*txt;
   t_fire		*fire;
+  int			count;
   bool			start;
 }			t_menu;
 
@@ -95,6 +101,7 @@ typedef	struct		s_data
   t_bunny_effect	*saber;
   t_bunny_effect	*death;
   t_sample		*samples[NB_SAMPLES];
+  char			*str;
   int			curmusic;
   int			change;
   int			kill;
@@ -149,6 +156,17 @@ void	refresh_player_pos(t_player *);
 void	check_player_movement(t_data *,
 			      t_bunny_keysym,
 			      t_bunny_event_state);
+
+/*
+** Disp text: tet.c
+*/
+
+t_text	*char_to_list(char *);
+t_text	*chk_chr(t_text *, char);
+void	disalpha(char *);
+void	disp_text(t_text *, t_menu *, char *);
+void	fill_list(t_text *, char, int);
+void	put_on_screen(t_menu *, t_text *, int, int);
 
 /*
 ** OTHERS

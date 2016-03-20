@@ -5,9 +5,10 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:25:37 2016 bougon_p
-** Last update Sun Mar 20 09:27:29 2016 benjamin duhieu
+** Last update Sun Mar 20 12:20:49 2016 benjamin duhieu
 */
 
+#include <string.h>
 #include "mega.h"
 
 t_bunny_response	button_key(t_bunny_event_state state,
@@ -63,7 +64,11 @@ int		main()
 
   srand(time(NULL));
   bunny_set_maximum_ram(20000000);
-  data.window = bunny_start(WIN_WIDTH, WIN_HEIGHT, 0, "MEGAMAN");
+  data.str = strdup("It's a test");
+  if (!(data.window = bunny_start(WIN_WIDTH, WIN_HEIGHT, 0, "MEGAMAN")))
+    return (1);
+  if (!(data.pixarray = bunny_new_pixelarray(WIN_WIDTH, WIN_HEIGHT)))
+    return (1);
   if (init_var(&data) == 1)
     return (1);
   bunny_set_loop_main_function(mainloop);

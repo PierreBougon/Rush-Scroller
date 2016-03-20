@@ -5,7 +5,7 @@
 ## Login   <bougon_p@epitech.net>
 ## 
 ## Started on  Fri Mar 18 20:18:33 2016 bougon_p
-## Last update Sun Mar 20 09:28:53 2016 benjamin duhieu
+## Last update Sun Mar 20 11:54:29 2016 benjamin duhieu
 ##
 
 # USEFUL VARIABLES
@@ -36,6 +36,7 @@ WAVE		=	src/wave/
 MORT		=	src/mort/
 
 SRC		=	$(MAIN)main.c \
+			$(MAIN)text.c \
 			$(GAME)init_var.c \
 			$(GAME)display.c \
 			$(GAME)background.c \
