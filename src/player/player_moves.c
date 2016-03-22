@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Sat Mar 19 02:01:36 2016 bougon_p
-** Last update Sun Mar 20 22:09:41 2016 marc brout
+** Last update Mon Mar 21 12:27:52 2016 bougon_p
 */
 
 #include "mega.h"
@@ -68,8 +68,9 @@ void	check_player_movement(t_data *data, t_bunny_keysym keysym,
     data->player.ismoving = true;
   if (keysym == BKS_SPACE)
     {
+      if (!data->player.isattack)
+	bunny_sound_play(&data->saber->sound);
       data->player.isattack = true;
       data->player.ismoving = false;
-      bunny_sound_play(&data->saber->sound);
     }
 }
