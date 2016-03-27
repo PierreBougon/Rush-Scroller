@@ -8,7 +8,7 @@ For this Rush we used the Epitech graphical lib : the LibLapin V1.7 it started o
 ## Menu
 
 You can start/restart to play or quit the game.
-![Menu](/screenshots/megamenu.png?raw=true "Main Menu")
+![Menu](/screenshots/megamain.png?raw=true "Main Menu")
 
 ## The game
 
