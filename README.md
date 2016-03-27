@@ -14,15 +14,15 @@ You can start/restart to play or quit the game.
 
 Controls :
 
-- Next music  -> p
-- Prev music  -> m
-- Pitch music -> o
+	 - Next music  -> p
+	 - Prev music  -> m
+	 - Pitch music -> o
 
-- Move right -> right arrow
-- Move left  -> left arrow
-- Attack     -> space
+	 - Move right -> right arrow
+	 - Move left  -> left arrow
+	 - Attack     -> space
 
-- Menu  -> escape
+	 - Menu  -> escape
 
 ![EVT](/screenshots/megaevt.png?raw=true "Main environment")
 
