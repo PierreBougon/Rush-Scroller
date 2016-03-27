@@ -5,7 +5,7 @@
 ** Login   <bougon_p@epitech.net>
 **
 ** Started on  Fri Mar 18 20:25:37 2016 bougon_p
-** Last update Sun Mar 20 23:37:24 2016 bougon_p
+** Last update Sun Mar 27 23:21:38 2016 bougon_p
 */
 
 #include <string.h>
@@ -83,7 +83,7 @@ int		main()
   data.str = strdup(PRESENTATION);
   data.letters = strlen(data.str) * 34;
   data.scale = 0.0;
-  if (!(data.window = bunny_start(WIN_WIDTH, WIN_HEIGHT, 1, "MEGAMAN"))
+  if (!(data.window = bunny_start(WIN_WIDTH, WIN_HEIGHT, 0, "MEGAMAN"))
       ||
       !(data.pixarray = bunny_new_pixelarray(WIN_WIDTH, WIN_HEIGHT)))
     return (1);
